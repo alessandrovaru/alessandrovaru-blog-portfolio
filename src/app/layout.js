@@ -1,3 +1,5 @@
+
+import NavigationBar from '@/components/Nav';
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from 'next/font/google'
