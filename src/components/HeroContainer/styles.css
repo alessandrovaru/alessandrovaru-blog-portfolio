@@ -1,6 +1,11 @@
+
 .hero-container{
   height: 100vh;
   display: flex;
+  color: white;
   flex-direction: column;
   justify-content: center;
+  background-image: url('../../images/p1.jpg');
+  background-size: cover;
+  background-position: center;
 }
