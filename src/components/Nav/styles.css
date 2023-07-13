@@ -1,6 +1,5 @@
-.hero-container{
-  height: 92vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.navbar{
+  background-color: transparent !important;
+  height: 10vh;
+  padding: 0 12rem;
 }
