@@ -6,11 +6,7 @@ const index = () => {
       <div className="container">
       <h2>Acerca de mi</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptatum, voluptate, quibusdam, quia voluptas quod quos
-          voluptatem quas quidem doloribus quae. Quisquam voluptatum,
-          voluptate, quibusdam, quia voluptas quod quos voluptatem quas
-          quidem doloribus quae.
+        Desarrollador Front-end, Diseñador Gráfico y Fotógrafo de la ciudad de Caracas. Trabajando actualmente en La Pizarra del DT con React y Ruby On Rails. El diseño gráfico y la fotografía los desarrollo en un proyecto personal llamado Mixtapes de Caracas.
         </p>
       </div>
             

@@ -1,5 +1,7 @@
 .navbar{
   background-color: transparent !important;
   height: 10vh;
-  padding: 0 12rem;
+  position: absolute;
+  width: 100%;
+
 }

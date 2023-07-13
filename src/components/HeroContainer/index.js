@@ -6,9 +6,9 @@ const HeroContainer = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6">
-            <h1>Bienvenido a mi sitio web</h1>
-            <p>Este es un sitio web creado con Next.js y Bootstrap</p>
-            <button className="btn btn-primary">Ver Mandalas</button>
+            <h1>En la belleza del caos</h1>
+            <p>Full stack Ruby On Rails and React JS Developer, Graphic Designer and Street Photographer from Caracas, Venezuela</p>
+            <button className="btn btn-light">Ver Mandalas</button>
           </div>
         </div>
       </div>
