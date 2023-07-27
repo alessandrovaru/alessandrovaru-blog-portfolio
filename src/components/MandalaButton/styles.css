@@ -1,0 +1,99 @@
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.mandala-button{
+  height: 100vh;
+}
+
+.mandala-button .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+}
+
+.mandala-button .container .row{
+  width: 100%;
+}
+
+.mandala-button .container .row .logo-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mandala-button .container .row .menu{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.mandala-button .container .row div ul{
+  list-style: none;
+}
+.mandala-button .container .row div h1{
+  font-size: 3rem;
+}
+.mandala-button .container .row div .small-title{
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.mandala-button .container .row div span{
+  cursor: pointer;
+  margin: 0 20px 0 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.mandala-button .container .row div span:hover{
+  background-color: white;
+  color: black;
+}
+
+.mandala-button .container .row div .instructions{
+  margin: 20px 0 0 0;
+}
+
+.mandala-button .container .row div .img-fluid{
+  animation: rotate 24s linear infinite;
+  cursor: pointer;
+}
+
+
+
+/* add media query for mobile */
+
+@media (max-width: 900px){
+  .mandala-button .container .row div h1{
+    font-size: 2rem;
+  }
+  .mandala-button .container .row div p{
+    font-size: 0.6rem;
+  }
+  .mandala-button .container .row div span{
+    font-size: 0.8rem;
+  }
+  .mandala-button .container .row div .img-fluid{
+    width: 30%;
+  }
+  .mandala-button .container .row{
+    height: 100%;
+  }
+  .mandala-button .container .row .menu{
+    justify-content: center;
+  }
+}
+
+
+
+

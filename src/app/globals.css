@@ -18,3 +18,12 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #07140f
 }
+
+body h1, h2, h3, h4, h5, h6{
+  font-family: var(--microgramma-font);
+  text-transform: uppercase;
+}
+
+body p {
+  font-family: var(--questrial-font);
+}

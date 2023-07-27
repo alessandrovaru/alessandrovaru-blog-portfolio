@@ -12,12 +12,12 @@ const HeroContainer = (props) => {
       }}
     >
       <div className="container">
-        <div className="row align-items-center">
+        <div className="row align-items-center"> 
           <div className="col-md-12">
-            <h1>{props.homeContent.title}</h1>
-            <p>{props.homeContent.subtitle}</p>
-            <Link href={props.homeContent.link.url} >
-              <button className="btn btn-light">{props.homeContent.link.text}</button>
+            <h1>{props.content.title}</h1>
+            <p>{props.content.subtitle}</p>
+            <Link href={props.content.link.url} >
+              <button className="btn btn-light">{props.content.link.text}</button>
             </Link>
           </div>
         </div>
