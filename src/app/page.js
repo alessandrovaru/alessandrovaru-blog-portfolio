@@ -1,6 +1,7 @@
 import HeroContainer from '@/components/HeroContainer'
-import Image from 'next/image'
 
+// import { initializeApp } from "firebase/app";
+// import { getFirestore } from "firebase/firestore";
 
 export default function Home() {
   return (
