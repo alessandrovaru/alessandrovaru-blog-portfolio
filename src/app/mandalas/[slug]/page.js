@@ -4,6 +4,8 @@ import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import { notFound } from "next/navigation";
 
+import './styles.css'
+
 export default async function Page({ params : { slug } }) {
   const post = await fetchPageBySlug(slug);
   if (!post) notFound();
@@ -16,8 +18,13 @@ export default async function Page({ params : { slug } }) {
 
   renderer.use(hljsPlugin());
   renderer.use(bookmarkPlugin());
+  
 
   const html = await renderer.render(...blocks);
 
-  return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+  return (
+    <div className="notion-container">
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </div>
+  );
 }
