@@ -6,4 +6,10 @@
     width: 300px;
     height: auto;
   }
+
+  .notion-column_list{
+    display: flex;
+    overflow: scroll;
+    margin: 0 -120px 0 -120px;
+  }
 }

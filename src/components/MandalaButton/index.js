@@ -81,6 +81,16 @@ const index = (props) => {
     setMandalaClicked(true);
   };
 
+  const html = `
+    ${props.pagesList.map((page) => {
+      return `
+        <span>
+          <a href="${page.url}">${page.title}</a>
+        </span>
+      `
+    }).join('')}
+`
+
   return (
     <section
       className="mandala-button"
@@ -115,6 +125,7 @@ const index = (props) => {
                   );
                 })}
               </>
+              <div dangerouslySetInnerHTML={{ __html: html }} />
               <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
            </div>
           </div>
