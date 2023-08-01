@@ -82,9 +82,9 @@ const index = (props) => {
   };
 
   const html = `
-    ${props.pagesList.map((page) => {
+    ${props.pagesList.map((page, index) => {
       return `
-        <span>
+        <span key=${index}>
           <a href="${page.url}">${page.title}</a>
         </span>
       `
@@ -116,15 +116,6 @@ const index = (props) => {
             {/* add a small text before the h1 saying "serie fotografica" */}
             <p className="small-title">Serie Fotográfica</p>
             <h1>Mandalas</h1>
-              <>
-                {mandalaLinks.map((item, index) => {
-                  return (
-                    <span key={index}>
-                      {item.text}
-                    </span>
-                  );
-                })}
-              </>
               <div dangerouslySetInnerHTML={{ __html: html }} />
               <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
            </div>

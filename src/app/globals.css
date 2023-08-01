@@ -27,16 +27,3 @@ body h1, h2, h3, h4, h5, h6{
 body p {
   font-family: var(--questrial-font);
 }
-
-
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #1b2823 #ffffff;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    display: none;
-  }
