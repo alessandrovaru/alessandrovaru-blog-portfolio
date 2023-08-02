@@ -1,15 +1,19 @@
-/* .notion-container {
+.notion-container {
   background-color: #000;
   color: #fff;
-  padding: 120px;
-  & img{
-    width: 475px;
-    height: auto;
-  }
+}
 
-  .notion-column_list{
+.swiper{
+  width: auto;
+  height: 480px;
+  & .swiper-slide{
     display: flex;
-    overflow: scroll;
-    margin: 0 -120px 0 -120px;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    & img{
+      width: 600px;
+      height: auto;
+    }
   }
-} */
+}

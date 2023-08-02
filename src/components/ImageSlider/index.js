@@ -1,17 +1,18 @@
 "use client"
+import React from 'react';
 
 import { useEffect, useState } from 'react';
 // Import Swiper React components
 import Swiper from 'swiper';
 
+import { FreeMode } from 'swiper/modules';
+
+
 // Import Swiper styles
 import 'swiper/css';
-
-
+import 'swiper/css/free-mode';
 
 const index = (props) => {
-
-  
 
   useEffect(() => {
       document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
@@ -20,16 +21,17 @@ const index = (props) => {
         document.getElementsByClassName('notion-column')[i].classList.add('swiper-slide');
       }
       const swiper = new Swiper('.mySwiper', {
-        speed: 400,
-        spaceBetween: 100,
+        modules: [FreeMode],
+        slidesPerView: "auto",
+        grabCursor: true,
+        freeMode: true,
       });
       swiper.init();
   }, []);
   
-
   return (
     <>
-      <div className="swiper mySwiper"dangerouslySetInnerHTML={{ __html: props.images }} />
+      <div className="swiper mySwiper" dangerouslySetInnerHTML={{ __html: props.images }}/>
     </>
   )
 }
