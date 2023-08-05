@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Questrial } from "next/font/google";
@@ -25,7 +27,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${microgramma.className} ${questrial.variable}`}>{children}</body>
+      <body className={`${microgramma.className} ${questrial.variable}`}>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

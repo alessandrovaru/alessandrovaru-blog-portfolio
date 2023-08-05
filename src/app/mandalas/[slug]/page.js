@@ -24,15 +24,11 @@ export default async function Page({ params : { slug } }) {
   renderer.use(hljsPlugin());
   renderer.use(bookmarkPlugin());
 
-  const images = await renderer.render(blocks[2]);
+  const images = await renderer.render(blocks[1]);
 
-  blocks.splice(2, 1);
+  blocks.splice(1, 1);
   
   const html = await renderer.render(...blocks);
-
-  
-
-  
 
 
   return (

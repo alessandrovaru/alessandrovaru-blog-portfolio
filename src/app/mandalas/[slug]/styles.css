@@ -1,19 +1,26 @@
 .notion-container {
-  background-color: #000;
+  background-color: transparent;
   color: #fff;
+  /* Nest the second div child of this class */
+  & > div:nth-child(2){
+    padding: 20px 120px;
+  }
 }
 
 .swiper{
   width: auto;
-  height: 480px;
+  height: 60%;
+  padding: 120px;
   & .swiper-slide{
     display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
+    height: auto;
     & img{
-      width: 600px;
+      width: 680px;
       height: auto;
+      border-radius: 15px;
     }
   }
 }

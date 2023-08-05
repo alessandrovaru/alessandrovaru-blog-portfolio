@@ -20,12 +20,14 @@ const index = (props) => {
       for (let i = 0; i < images; i++) {
         document.getElementsByClassName('notion-column')[i].classList.add('swiper-slide');
       }
-      const swiper = new Swiper('.mySwiper', {
+      const swiperElement = document.querySelector('.mySwiper');
+      let swiper = new Swiper(swiperElement, {
         modules: [FreeMode],
         slidesPerView: "auto",
         grabCursor: true,
         freeMode: true,
-      });
+        spaceBetween: 30,
+      }); 
       swiper.init();
   }, []);
   
