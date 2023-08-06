@@ -16,8 +16,8 @@ const NavigationBar = () => {
     return (
       <>
         {[false].map((expand) => (
-          <Navbar key={expand} expand={expand} className="navbar-dark bg-dark mb-3">
-            <Container fluid>
+          <Navbar key={expand} expand={expand} className="navbar-dark">
+            <Container>
               <Navbar.Brand href="#"><Image src={logoName} className='img-fluid' ></Image></Navbar.Brand>
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               <Navbar.Offcanvas
@@ -27,14 +27,14 @@ const NavigationBar = () => {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Menu
+                    MENÚ
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Link className='nav-link' href="/mandalas">Mandalas</Link>
-                    <Link className='nav-link' href="/mixtapes-de-caracas">Mixtapes de Caracas</Link>
-                    <Link className='nav-link' href="/contact">Contact</Link>
+                    <Link className='nav-link' href="/mandalas">MANDALAS</Link>
+                    <Link className='nav-link' href="/mixtapes-de-caracas">MIXTAPES DE CARACAS</Link>
+                    <Link className='nav-link' href="/contact">CONTACT</Link>
                   </Nav>
                   
                 </Offcanvas.Body>

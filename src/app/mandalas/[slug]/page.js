@@ -1,5 +1,5 @@
 
-import { fetchPageBlocks, fetchPageBySlug, notion } from "@/lib/notion";
+import { fetchPageBlocks, fetchMandalasPageBySlug, notion } from "@/lib/notion";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
@@ -10,7 +10,7 @@ import ImageSlider from '@/components/ImageSlider'
 import './styles.css'
 
 export default async function Page({ params : { slug } }) {
-  const post = await fetchPageBySlug(slug);
+  const post = await fetchMandalasPageBySlug(slug);
   if (!post) notFound();
 
   const blocks = await fetchPageBlocks(post.id);
@@ -34,7 +34,7 @@ export default async function Page({ params : { slug } }) {
   return (
     <div className="notion-container">
       <ImageSlider images={images}/>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="container" dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 }

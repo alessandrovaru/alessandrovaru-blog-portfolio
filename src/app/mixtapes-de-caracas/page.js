@@ -1,11 +1,11 @@
 import MandalaButton from "@/components/MandalaButton"
 
-import { fetchMandalasPages } from "@/lib/notion";
+import { fetchMixtapesPages } from "@/lib/notion";
 
 import { notFound } from "next/navigation";
 
 const pageContent = {
-  title: 'Mandalas',
+  title: 'MIXTAPES DE CARACAS',
   subtitle: 'El Mandala es el centro este proyecto, símbolo de totalidad y orden interior. Los diseños y los poemas son producciones inconscientes en las que permito hablar a las imágenes a partir de mis fotos y los más profundo de mi ser.',
   link: {
     url: '/mandalas',
@@ -13,7 +13,7 @@ const pageContent = {
   }
 }
 
-const pages = await fetchMandalasPages();
+const pages = await fetchMixtapesPages();
 if (!pages) notFound();
 
 const pagesList = pages.map((page) => {

@@ -1,13 +1,12 @@
 .navbar{
   background-color: transparent !important;
-  height: 10vh;
-  position: absolute;
+  height: 8vh;
   width: 100%;
   padding: 0 10%;
 }
 
 .navbar .img-fluid{
-  width: 200px;
+  width: 120px;
 }
 
 @media (max-width: 900px) {

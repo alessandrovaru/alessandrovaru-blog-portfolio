@@ -2,9 +2,6 @@
   background-color: transparent;
   color: #fff;
   /* Nest the second div child of this class */
-  & > div:nth-child(2){
-    padding: 20px 120px;
-  }
 }
 
 .swiper{
@@ -18,9 +15,13 @@
     width: auto;
     height: auto;
     & img{
-      width: 680px;
+      width: 480px;
       height: auto;
       border-radius: 15px;
+      /* Add media query to change img width */
+      @media (max-width: 900px) {
+        width: 320px;
+      }
     }
   }
 }

@@ -7,10 +7,11 @@ export const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-export const fetchPages = React.cache(async () => {
+//MANDALAS FETCH
+export const fetchMandalasPages = React.cache(async () => {
   return notion.databases
     .query({
-      database_id: process.env.NOTION_DATABASE_ID,
+      database_id: process.env.MANDALAS_NOTION_DATABASE_ID,
       filter: {
         property: "status",
         status: {
@@ -21,10 +22,27 @@ export const fetchPages = React.cache(async () => {
     .then((res) => res.results);
 });
 
-export const fetchPageBySlug = React.cache(async (slug) => {
+//MIXTAPES FETCH
+export const fetchMixtapesPages = React.cache(async () => {
   return notion.databases
     .query({
-      database_id: process.env.NOTION_DATABASE_ID,
+      database_id: process.env.MIXTAPES_NOTION_DATABASE_ID,
+      filter: {
+        property: "status",
+        status: {
+          equals: "Published",
+        },
+      },
+    })
+    .then((res) => res.results);
+});
+
+
+//MANDALAS PAGE FETCH
+export const fetchMandalasPageBySlug = React.cache(async (slug) => {
+  return notion.databases
+    .query({
+      database_id: process.env.MANDALAS_NOTION_DATABASE_ID,
       filter: {
         property: "slug",
         rich_text: {
@@ -34,6 +52,22 @@ export const fetchPageBySlug = React.cache(async (slug) => {
     })
     .then((res) => res.results[0]);
 });
+
+//MIXTAPES PAGE FETCH
+export const fetchMixtapesPageBySlug = React.cache(async (slug) => {
+  return notion.databases
+    .query({
+      database_id: process.env.MIXTAPES_NOTION_DATABASE_ID,
+      filter: {
+        property: "slug",
+        rich_text: {
+          equals: slug,
+        },
+      },
+    })
+    .then((res) => res.results[0]);
+});
+
 
 export const fetchPageBlocks = React.cache(async (pageId) => {
   return notion.blocks.children
