@@ -65,7 +65,10 @@ const index = (props) => {
             <p className="small-title">Serie Fotográfica</p>
             <h1>MIXTAPES DE CARACAS</h1>
               <div dangerouslySetInnerHTML={{ __html: html }} />
-              <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
+              <p className="instructions">Mixtapes de Caracas es un proyecto en el que fotografía, diseño, video y textos expresan mi visión de la belleza en el caos de mi ciudad amada.</p>
+              {/* Create a smaller fontsize p */}
+              <p className="instructions">Lamentablemente, los Mixtapes hasta el volumen 12 se perdieron en un disco duro que se dañó, pero logré recuperarlas de mis redes sociales.</p>
+              <p className="instructions">Para ver las fotos, haz click en el título de cada Mixtape.</p>
            </div>
           </div>
         </div>
