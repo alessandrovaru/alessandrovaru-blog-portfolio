@@ -1,0 +1,27 @@
+.notion-container {
+  background-color: transparent;
+  color: #fff;
+  /* Nest the second div child of this class */
+}
+
+.swiper{
+  width: auto;
+  height: 60%;
+  padding: 120px;
+  & .swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    & img{
+      width: 480px;
+      height: auto;
+      border-radius: 15px;
+      /* Add media query to change img width */
+      @media (max-width: 900px) {
+        width: 320px;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.mixtapes-container{
+  height: 89vh;
+}
+
+.mixtapes-container .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+}
+
+.mixtapes-container .container .row{
+  width: 100%;
+}
+
+.mixtapes-container .container .row .logo-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .img-fluid{
+    width: 50%;
+  }
+}
+
+.mixtapes-container .container .row .menu{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.mixtapes-container .container .row div ul{
+  list-style: none;
+}
+.mixtapes-container .container .row div h1{
+  font-size: 3rem;
+}
+.mixtapes-container .container .row div .small-title{
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+.mixtapes-container .container .row div span{
+  cursor: pointer;
+  margin: 0 20px 0 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  & a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.mixtapes-container .container .row div span:hover{
+  background-color: white;
+  color: black;
+  & a{
+    color: black;
+  }
+}
+
+.mixtapes-container .container .row div .instructions{
+  margin: 20px 0 0 0;
+}
+
+
+
+
+
+/* add media query for mobile */
+
+@media (max-width: 900px){
+  .mixtapes-container .container .row div h1{
+    font-size: 2rem;
+  }
+  .mixtapes-container .container .row div p{
+    font-size: 0.6rem;
+  }
+  .mixtapes-container .container .row div span{
+    font-size: 0.8rem;
+  }
+  .mixtapes-container .container .row div .img-fluid{
+    width: 30%;
+  }
+  .mixtapes-container .container .row{
+    height: 100%;
+  }
+  .mixtapes-container .container .row .menu{
+    justify-content: center;
+  }
+}
+
+
+
+
