@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import logo from "/public/images/logo-mixtapes.png";
 
-import background from "/public/images/p2.jpg";
+import background from "/public/images/p6.jpg";
 
 import "./styles.css";
 
