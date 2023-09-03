@@ -1,7 +1,9 @@
 .notion-container {
   background-color: transparent;
   color: #fff;
-  /* Nest the second div child of this class */
+  & .container{
+    padding-bottom: 120px;
+  }
 }
 
 .swiper{

@@ -6,6 +6,7 @@ import logo from "/public/images/mandalawhite.png";
 import background from "/public/images/p1.jpg";
 
 import "./styles.css";
+import Image from "next/image";
 
 const mandalaLinks = [
   {
@@ -103,12 +104,14 @@ const index = (props) => {
       <div className="container">
         <div className="row">
           <div className="logo-image col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <img 
+            <Image 
               title="Click me" 
               src={logo.src} 
               className="img-fluid" 
               alt="logo"
               onClick={randomLink}  
+              width={250}
+              height={250}
             />
           </div>
           <div className="menu col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">

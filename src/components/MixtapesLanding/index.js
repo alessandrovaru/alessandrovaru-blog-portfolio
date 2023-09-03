@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import logo from "/public/images/logo-mixtapes.png";
 
 import background from "/public/images/p6.jpg";
@@ -52,11 +53,13 @@ const index = (props) => {
       <div className="container">
         <div className="row">
           <div className="logo-image col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <img 
+            <Image 
               title="Click me" 
               src={logo.src} 
               className="img-fluid" 
               alt="logo"
+              width={250}
+              height={250}
             />
           </div>
           <div className="menu col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">

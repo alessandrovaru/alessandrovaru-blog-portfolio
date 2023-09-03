@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import'./styles.css'
+import background from "/public/images/p1.jpg";
+import Image from 'next/image';
 
 
 
@@ -8,18 +10,23 @@ const HeroContainer = (props) => {
     <div 
       className="hero-container"
       style={{
-        backgroundImage: `url(${props.backgroundImage.src})`,
+        backgroundImage: `url(${background.src})`,
       }}
     >
       <div className="container">
-        <div className="row align-items-center"> 
-          <div className="col-md-12">
-            <h1>{props.content.title}</h1>
-            <p>{props.content.subtitle}</p>
-            <Link href={props.content.link.url} >
-              <button className="btn btn-light">{props.content.link.text}</button>
-            </Link>
-          </div>
+        <div className="hero-content">
+          <h1 className="hero-title">{props.title}</h1>
+          <h2 className="hero-subtitle">{props.subtitle}</h2>
+          <p className="hero-description">{props.description}</p>
+          {props.menu && (
+            <div className="hero-menu">
+              {props.menu.map((item, index) => (
+                <Link href={item.url} key={index}>
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
