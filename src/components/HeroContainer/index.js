@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import'./styles.css'
-import background from "/public/images/p1.jpg";
+
 import Image from 'next/image';
 
 
@@ -10,7 +10,7 @@ const HeroContainer = (props) => {
     <div 
       className="hero-container"
       style={{
-        backgroundImage: `url(${background.src})`,
+        backgroundImage: `url(${props.background.src})`,
       }}
     >
       <div className="container">

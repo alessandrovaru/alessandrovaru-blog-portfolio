@@ -2,6 +2,8 @@ import HeroContainer from '@/components/HeroContainer'
 
 import logo from "/public/images/logoName.png";
 
+import background from "/public/images/p3.jpg";
+
 export default function Home() {
   return (
     <HeroContainer 
@@ -9,6 +11,7 @@ export default function Home() {
       title="Alessandrovaru"
       subtitle="La belleza en el caos"
       description="Alessandrovaru es un proyecto de arte digital en el que expreso una parte de mí y de mi visión del mundo."
+      background={background}
       menu={[
         {
           name: "Sesiones",

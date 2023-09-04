@@ -4,6 +4,8 @@ import { fetchMixtapesPages } from "@/lib/notion";
 
 import { notFound } from "next/navigation";
 
+import background from "/public/images/p3.jpg";
+
 const pages = await fetchMixtapesPages();
 if (!pages) notFound();
 
@@ -19,7 +21,10 @@ const pagesList = pages.map((page) => {
 const page = () => {
   return (
     <>
-      <MixtapesLanding pagesList={pagesList} />
+      <MixtapesLanding 
+        pagesList={pagesList} 
+        background={background}
+      />
     </>
   )
 }

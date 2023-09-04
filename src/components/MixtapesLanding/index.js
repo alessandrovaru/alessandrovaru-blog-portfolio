@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "/public/images/logo-mixtapes.png";
 
-import background from "/public/images/p6.jpg";
+
 
 import "./styles.css";
 
@@ -45,7 +45,7 @@ const index = (props) => {
     <section
       className="mixtapes-container"
       style={{
-        backgroundImage: `url(${background.src})`,
+        backgroundImage: `url(${props.background.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -69,6 +69,7 @@ const index = (props) => {
             <h1>MIXTAPES DE CARACAS</h1>
               <div dangerouslySetInnerHTML={{ __html: html }} />
               <p className="instructions">Mixtapes de Caracas es un proyecto en el que fotografía, diseño, video y textos expresan mi visión de la belleza en el caos de mi ciudad amada.</p>
+              <p className="instructions">En los primeros volúmenes, las historias son cortas o inexistentes y es debido a que este es un proyecto en constante evolución y en un principio no tenía pensando escribir una historia para cada volumen, se trataba unicamente de los captions de estos posts en Instagram.</p>
               {/* Create a smaller fontsize p */}
               <p className="instructions">Lamentablemente, los Mixtapes hasta el volumen 12 se perdieron en un disco duro que se dañó, pero logré recuperarlas de mis redes sociales.</p>
               <p className="instructions">Para ver las fotos, haz click en el título de cada Mixtape.</p>
