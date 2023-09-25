@@ -1,13 +1,8 @@
-"use client"
-import React from 'react';
-
-import { useEffect, useState } from 'react';
+"use client";
+import { useEffect } from 'react';
 // Import Swiper React components
 import Swiper from 'swiper';
-
 import { FreeMode } from 'swiper/modules';
-
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';

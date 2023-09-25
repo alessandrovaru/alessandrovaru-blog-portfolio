@@ -1,0 +1,33 @@
+.homeSlide{
+  background-color: red;
+  height: 89vh;
+  background-position: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background-size: cover;
+  &:hover{
+    transform: scale(1.05);
+    .container{
+      color: white;
+    }
+  }
+  & .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    height: 100%;
+  }
+  & h1{
+    font-size: 5rem;
+    margin-bottom: 0;
+  }
+  & p {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+}
