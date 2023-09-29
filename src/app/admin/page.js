@@ -1,4 +1,3 @@
-
 'use client'
 import React from 'react'
 
@@ -23,6 +22,10 @@ const page = () => {
     });
   }
 
+  const handleCreateMandala = () => {
+    router.push("/admin/mandalas/create")
+  }
+
   React.useEffect(() => {
       if (user == null) router.push("/signin")
   }, [user])
@@ -31,6 +34,9 @@ const page = () => {
   return (
     <div>
       <h1>Admin Page</h1>
+      <p>Logged in as {user?.email}</p>
+      <button onClick={handleCreateMandala}>Crear Mandala</button>
+      <button onClick={handleSignOut}>Crear Mixtape</button>
       <button onClick={handleSignOut}>Sign Out</button>
     </div>
   )
