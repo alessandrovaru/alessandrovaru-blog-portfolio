@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // Import Swiper React components
 import Swiper from 'swiper';
 import { FreeMode } from 'swiper/modules';
@@ -9,10 +9,11 @@ import 'swiper/css/free-mode';
 
 const index = (props) => {
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
       document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
       document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
-      // get the first child of an element
       let images = document.getElementsByClassName('notion-column').length
       for (let i = 0; i < images; i++) {
         document.getElementsByClassName('notion-column')[i].classList.add('swiper-slide');
@@ -27,10 +28,18 @@ const index = (props) => {
       }); 
       swiper.init();
   }, []);
+
+
   
   return (
     <>
       <div className="swiper mySwiper" dangerouslySetInnerHTML={{ __html: props.images }}/>
+      {isLoaded ? (
+        <>Cargado</>
+      ) : (
+        <>Loadingg</>
+      )
+      }
     </>
   )
 }

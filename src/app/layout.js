@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Questrial } from "next/font/google";
 
 import localFont from "next/font/local";
+import { AuthContextProvider } from "@/context/AuthContext";
 
 const questrial = Questrial({ 
   subsets: ["latin"],
@@ -28,8 +29,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${microgramma.className} ${questrial.variable}`}>
-        {children}
-        <Footer />
+        <AuthContextProvider>
+          {children}
+          <Footer />
+        </AuthContextProvider>
       </body>
     </html>
   );
