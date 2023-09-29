@@ -11,6 +11,8 @@ const index = (props) => {
 
   useEffect(() => {
       document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
+      document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
+      // get the first child of an element
       let images = document.getElementsByClassName('notion-column').length
       for (let i = 0; i < images; i++) {
         document.getElementsByClassName('notion-column')[i].classList.add('swiper-slide');
