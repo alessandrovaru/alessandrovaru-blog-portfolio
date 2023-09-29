@@ -1,33 +1,98 @@
 .homeSlide{
-  background-color: red;
-  height: 89vh;
-  background-position: center;
+  height: 97vh;
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  background-size: cover;
-  &:hover{
-    transform: scale(1.05);
-    .container{
-      color: white;
-    }
-  }
-  & .container{
+  & .home-slider-text{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: transparent;
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    color: white;
     height: 100%;
+    background-color: black;
+    width: 50%;
   }
   & h1{
-    font-size: 5rem;
+    font-size: 2.5rem;
     margin-bottom: 0;
   }
   & p {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
-
+  & .logoSlider{
+    width: 200px;
+  }
+  & .logoMandalas{
+    width: 120px;
+    animation: rotate 33s linear infinite;
+  }
+  & .logoMixtapes{
+    
+  }
+  & .logoFantasias{
+    
+  }
+  & .home-slider-button{
+    color: white;
+    border: 1px solid white;
+    text-transform: uppercase;
+  }
+  & .home-slider-button:hover{
+    background-color: white;
+    color: black;
+  }
+  & .home-slider-image{
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+  }
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+@media (max-width: 900px) {
+  .homeSlide{
+    height: 100vh;
+    flex-direction: column-reverse;
+    & h1{
+      font-size: 1.4rem;
+      color: white;
+    }
+    & p {
+      font-size: 0.8rem;
+      color: white;
+    }
+    & .home-slider-text{
+      width: 100%;
+      height: 40%;
+      background-color: black;
+    }
+    & .home-slider-image{
+      width: 100%;
+      height: 60%;
+      background-size: cover;
+      background-position: center;
+    }
+    & .logoMandalas{
+      width: 80px;
+    }
+    & .logoMixtapes{
+      width: 130px;
+    }
+    & .logoFantasias{
+      width: 130px;
+    }
+  }
+}
+

@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${microgramma.className} ${questrial.variable}`}>
-        <Nav />
         {children}
         <Footer />
       </body>

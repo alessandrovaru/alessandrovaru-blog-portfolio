@@ -18,7 +18,7 @@ const NavigationBar = () => {
         {[false].map((expand) => (
           <Navbar key={expand} expand={expand} className="navbar-dark">
             <Container>
-              <Link href="/" class="navbar-brand"><Image src={logoName} className='img-fluid' ></Image></Link>
+              <Link href="/" className="navbar-brand"><Image src={logoName} className='img-fluid' ></Image></Link>
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               <Navbar.Offcanvas
                 id={`offcanvasNavbar-expand-${expand}`}
