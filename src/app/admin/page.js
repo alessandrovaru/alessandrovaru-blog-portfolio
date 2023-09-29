@@ -4,6 +4,7 @@ import React from 'react'
 import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '@/context/AuthContext'
+import listAllItems from "@/firebase/storage/listData";
 
 
 const page = () => {
@@ -29,6 +30,17 @@ const page = () => {
   React.useEffect(() => {
       if (user == null) router.push("/signin")
   }, [user])
+
+  React.useEffect(() => {
+    (async () => {
+        const { result, error } = await listAllItems();
+        if (error) {
+            return console.log(error)
+        }
+        console.log(result)
+    }
+    )()
+}, [])
 
 
   return (

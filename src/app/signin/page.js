@@ -11,7 +11,7 @@ function Page() {
     const handleForm = async (event) => {
         event.preventDefault()
 
-        const { result, error } = await signIn(email, password);
+        const { result, error } = await signIn(email, password); 
 
         if (error) {
             return console.log(error)
@@ -21,6 +21,8 @@ function Page() {
         console.log(result)
         return router.push("/admin")
     }
+
+
     return (<div className="wrapper">
         <div className="form-wrapper">
             <h1 className="mt-60 mb-30">Sign in</h1>
