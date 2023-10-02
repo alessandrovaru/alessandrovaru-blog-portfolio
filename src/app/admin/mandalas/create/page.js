@@ -6,10 +6,6 @@ import { useAuthContext } from '@/context/AuthContext'
 
 import  addData  from '@/firebase/firestore/addData'
 
-import Select from 'react-select';
-
-import  listData  from '@/firebase/storage/listData'
-import  listFolders  from '@/firebase/storage/listFolders'
 
 
 const page = () => {
@@ -26,6 +22,7 @@ const page = () => {
       title: e.target.title.value,
       content: e.target.content.value.replace(/\n/g, '<br />'),
       slug: e.target.slug.value,
+      storage_slug: e.target['storage-slug'].value,
     };
     const { docRef, error } = await addData('mandalas', data)
 
@@ -68,8 +65,10 @@ const page = () => {
           required
         >
         </textarea>
-        <label htmlFor="title">Slug</label>
+        <label htmlFor="slug">Slug for url</label>
         <input className="form-control" type="text" id="slug" name="slug" />
+        <label htmlFor="storage-slug">Slug for Storage link</label>
+        <input className="form-control" type="text" id="storage-slug" name="storage-slug" />
         <button className="btn btn-primary" type="submit">Create</button>
       </form>
     </div>
