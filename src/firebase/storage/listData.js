@@ -1,28 +1,19 @@
+// listData.js
 import { getStorage, ref, listAll } from "firebase/storage";
 
 const storage = getStorage();
 
-// Create a reference under which you want to list
-const listRef = ref(storage, 'mandalas/mandala-1');
 
-// Find all the prefixes and items.
-async function listAllItems() {
+async function listData() {
+  const listRef = ref(storage, `mandalas`);
   try {
-    const result = await listAll(listRef);
-    result.prefixes.forEach((folderRef) => {
-      // All the prefixes under listRef.
-      // You may call listAll() recursively on them.
-      alert(folderRef+'folder')
-    });
-    result.items.forEach((itemRef) => {
-      // All the items under listRef.
-      alert(itemRef+'item')
-    });
-    return { result };
+    const res = await listAll(listRef);
+    const items = res.items.map(itemRef => ({ label: itemRef.name, value: itemRef.name }));
+    return items;
   } catch (error) {
-    alert(error);
-    return { error };
+    console.error("Error fetching items", error);
+    return [];
   }
 }
 
-export default listAllItems;
+export default listData;
