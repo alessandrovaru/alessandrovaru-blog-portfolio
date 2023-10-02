@@ -4,6 +4,8 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '@/context/AuthContext'
 
+import  addData  from '@/firebase/firestore/addData'
+
 
 const page = () => {
   const { user } = useAuthContext()
@@ -11,15 +13,17 @@ const page = () => {
   const router = useRouter()
 
   const handleForm = async (e) => {
+    e.preventDefault();
     const data = {
       title: e.target.title.value,
       content: e.target.content.value
     }
-    const { result, error } = await addData('users', 'user-id', data)
+    const { docRef, error } = await addData('mandalas', data)
 
     if (error) {
-      return console.log(error)
+      return alert(error)
     }
+    alert('Mandala created' + docRef.id)
   }
 
   React.useEffect(() => {
@@ -28,7 +32,7 @@ const page = () => {
 
   return (
     <div className='container'>
-      <form>
+      <form onSubmit={handleForm}>
         <h1>Crear Mandala</h1>
         <p>Logged in as {user?.email}</p>
         <label htmlFor="title">Title</label>
