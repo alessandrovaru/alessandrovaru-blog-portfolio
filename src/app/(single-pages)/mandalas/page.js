@@ -1,8 +1,8 @@
 import MandalaButton from "@/components/MandalaButton"
 
-import { fetchMandalasPages } from "@/lib/notion";
-
 import { notFound } from "next/navigation";
+
+import listData from "@/firebase/firestore/listData";
 
 const pageContent = {
   title: 'Mandalas',
@@ -12,16 +12,17 @@ const pageContent = {
     text: 'Ver más'
   }
 }
+const pagesFb = await listData('mandalas');
 
-const pages = await fetchMandalasPages();
-if (!pages) notFound();
-
-const pagesList = pages.map((page) => {
+const pagesListFb = pagesFb.map((page) => {
+  console.log(page);
   return {
-    title: page.properties.Title.title[0].text.content,
-    url: `/mandalas/${page.properties.slug.rich_text[0].plain_text}`
+    title: page.title,
+    url: `/mandalas-fb/${page.slug}`
   }
 })
+
+
 
 // {
 //   "ID":"TITLE",
@@ -49,7 +50,8 @@ const pagesList = pages.map((page) => {
 const page = () => {
   return (
     <>
-      <MandalaButton content={pageContent} pagesList={pagesList} />
+      <MandalaButton content={pageContent} pagesList={pagesListFb} />
+      <p>{JSON.stringify(pagesListFb)}</p>
     </>
   )
 }
