@@ -50,10 +50,10 @@ const page = ({ params : { slug } }) => {
 
 
   return (
-    <div className='container'>
+    <div className='mandala-container container'>
       <PostImagesSlider storageResult={storageResult} result={result} />
       {result.map((item) => (
-        <div className='mandala-container' key={item.slug}>
+        <div className='mandala-wrapper' key={item.slug}>
           <h1 className='mandala-title mt-3'>{item.title}</h1>
           <p className='mandala-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
         </div>

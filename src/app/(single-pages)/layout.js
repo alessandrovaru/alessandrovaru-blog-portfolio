@@ -4,7 +4,6 @@ import Nav from "@/components/Nav";
 export default function SinglePagesLayout({ children }) {
   return (
     <>
-      <Nav />
       {children}
     </>
   );

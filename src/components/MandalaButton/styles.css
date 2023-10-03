@@ -7,8 +7,16 @@
   }
 }
 
+.mandala-button-container{
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .mandala-button{
-  height: 89vh;
+  height: 100%;
+  border-radius: 15px;
 }
 
 .mandala-button .container{

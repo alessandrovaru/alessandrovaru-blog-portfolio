@@ -2,6 +2,8 @@ import MandalaButton from "@/components/MandalaButton"
 
 import { notFound } from "next/navigation";
 
+import './styles.css'
+
 import listData from "@/firebase/firestore/listData";
 
 const pageContent = {
@@ -13,6 +15,7 @@ const pageContent = {
   }
 }
 const pagesFb = await listData('mandalas');
+
 
 const pagesListFb = pagesFb.map((page) => {
   console.log(page);
@@ -49,10 +52,9 @@ const pagesListFb = pagesFb.map((page) => {
 
 const page = () => {
   return (
-    <>
+    <div className="mandala-page-container">
       <MandalaButton content={pageContent} pagesList={pagesListFb} />
-      <p>{JSON.stringify(pagesListFb)}</p>
-    </>
+    </div>
   )
 }
 

@@ -16,15 +16,19 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #e7eff9;
-  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+  background-color:hsla(0,0%,0%,1);
+  background-image:
+  radial-gradient(at 0% 0%, hsla(139,100%,76%,0.54) 0px, transparent 50%),
+  radial-gradient(at 92% 86%, hsla(130,41%,13%,1) 0px, transparent 50%);
 }
 
 body h1, h2, h3, h4, h5, h6{
   font-family: var(--microgramma-font);
   text-transform: uppercase;
+  color: white;
 }
 
 body p{
   font-family: var(--questrial-font);
+  color: white;
 }

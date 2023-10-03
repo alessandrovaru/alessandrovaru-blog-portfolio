@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${microgramma.className} ${questrial.variable}`}>
         <AuthContextProvider>
+          <Nav />
           {children}
           <Footer />
         </AuthContextProvider>

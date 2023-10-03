@@ -8,32 +8,6 @@ import background from "/public/images/p1.jpg";
 import "./styles.css";
 import Image from "next/image";
 
-const mandalaLinks = [
-  {
-    text: "Nausea Ansiosa",
-    link: "/mandalas/nausea-ansiosa",
-  },
-  {
-    text: "La escalera que no va a ningún lugar.",
-    link: "/mandalas/la-escalera-que-no-va-a-ningun-lugar",
-  },
-  {
-    text: "Existo, antes pienso",
-    link: "/mandalas/existo-antes-pienso",
-  },
-  {
-    text: "Como si volviera hacia atrás.",
-    link: "/mandalas/como-si-volviera-hacia-atras",
-  },
-  {
-    text: "Una hoja transparente",
-    link: "/mandalas/una-hoja-transparente",
-  },
-  {
-    text: "Un recuerdo que no quiero recordar.",
-    link: "/mandalas/un-recuerdo-que-no-quiero-recordar",
-  },
-];
 
 const index = (props) => {
   const [mandalaClicked, setMandalaClicked] = useState(false);
@@ -93,35 +67,37 @@ const index = (props) => {
 `
 
   return (
-    <section
-      className="mandala-button"
-      style={{
-        backgroundImage: `url(${background.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="container">
-        <div className="row">
-          <div className="logo-image col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <Image 
-              title="Click me" 
-              src={logo.src} 
-              className="img-fluid" 
-              alt="logo"
-              onClick={randomLink}  
-              width={250}
-              height={250}
-            />
-          </div>
-          <div className="menu col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-           <div>
-            {/* add a small text before the h1 saying "serie fotografica" */}
-            <p className="small-title">Serie Fotográfica</p>
-            <h1>Mandalas</h1>
-              <div dangerouslySetInnerHTML={{ __html: html }} />
-              <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
-           </div>
+    <section className="mandala-button-container container">
+      <div
+        className="mandala-button"
+        style={{
+          backgroundImage: `url(${background.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="logo-image col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <Image 
+                title="Click me" 
+                src={logo.src} 
+                className="img-fluid" 
+                alt="logo"
+                onClick={randomLink}  
+                width={250}
+                height={250}
+              />
+            </div>
+            <div className="menu col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div>
+              {/* add a small text before the h1 saying "serie fotografica" */}
+              <p className="small-title">Serie Fotográfica</p>
+              <h1>Mandalas</h1>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
+            </div>
+            </div>
           </div>
         </div>
       </div>
