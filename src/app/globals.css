@@ -16,7 +16,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #07140f
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
 }
 
 body h1, h2, h3, h4, h5, h6{

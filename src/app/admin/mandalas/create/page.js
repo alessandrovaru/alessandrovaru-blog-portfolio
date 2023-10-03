@@ -29,7 +29,11 @@ const page = () => {
     if (error) {
       return alert(error)
     }
-    alert('Mandala created' + docRef.id)
+    alert('Mandala created')
+    e.target.title.value = '';
+    e.target.content.value = '';
+    e.target.slug.value = '';
+    e.target['storage-slug'].value = '';
   }
 
   React.useEffect(() => {

@@ -1,12 +1,17 @@
 'use client'
 import React from 'react'
 
+import DOMPurify from 'dompurify';
+
+
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '@/context/AuthContext'
 
 import  listData  from '@/firebase/firestore/listData'
 import  listStorageData  from '@/firebase/storage/listStorageData'
 import PostImagesSlider from '@/components/PostImagesSlider'
+
+import './styles.css'
 
 
 const page = ({ params : { slug } }) => {
@@ -48,9 +53,9 @@ const page = ({ params : { slug } }) => {
     <div className='container'>
       <PostImagesSlider storageResult={storageResult} result={result} />
       {result.map((item) => (
-        <div key={item.slug}>
-          <h1>{item.title}</h1>
-          <p>{item.content}</p>
+        <div className='mandala-container' key={item.slug}>
+          <h1 className='mandala-title mt-3'>{item.title}</h1>
+          <p className='mandala-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
         </div>
       ))      
       }

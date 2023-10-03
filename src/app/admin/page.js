@@ -30,16 +30,6 @@ const page = () => {
       if (user == null) router.push("/signin")
   }, [user])
 
-  React.useEffect(() => {
-    (async () => {
-        const { result, error } = await listAllItems();
-        if (error) {
-            return console.log(error)
-        }
-        console.log(result)
-    }
-    )()
-}, [])
 
 
   return (
