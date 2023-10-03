@@ -23,7 +23,7 @@ const page = ({ params : { slug } }) => {
   //fetchItems
   React.useEffect(() => {
     async function fetchItems() {
-      const items = await listData('mandalas');
+      const items = await listData('mixtapes-de-caracas');
       const filteredItems = items.filter(item => item.slug === slug)
       setResult(filteredItems);
     }
@@ -35,7 +35,7 @@ const page = ({ params : { slug } }) => {
   React.useEffect(() => {
     if (result.length > 0) {
       async function fetchStorageItems() {
-        const items = await listStorageData(`mandalas/${result[0].storage_slug}`);
+        const items = await listStorageData(`mixtapes-de-caracas/${result[0].storage_slug}`);
         setStorageResult(items);
       }
       fetchStorageItems();
@@ -50,12 +50,12 @@ const page = ({ params : { slug } }) => {
 
 
   return (
-    <div className='mandala-container container'>
-      <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
+    <div className='mixtapes-container container'>
+      <PostImagesSlider storageResult={storageResult} result={result} storage={'mixtapes-de-caracas'} />
       {result.map((item) => (
-        <div className='mandala-wrapper' key={item.slug}>
-          <h1 className='mandala-title mt-3'>{item.title}</h1>
-          <p className='mandala-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+        <div className='mixtapes-wrapper' key={item.slug}>
+          <h1 className='mixtapes-title mt-3'>{item.title}</h1>
+          <p className='mixtapes-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
         </div>
       ))      
       }

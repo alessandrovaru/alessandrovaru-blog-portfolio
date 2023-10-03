@@ -26,30 +26,6 @@ const pagesListFb = pagesFb.map((page) => {
 })
 
 
-
-// {
-//   "ID":"TITLE",
-//   "TYPE":"TITLE",
-//   "TITLE":[{
-//     "TYPE":"TEXT",
-//     "TEXT":{
-//       "CONTENT":"NAUSEA ANSIOSA",
-//       "LINK":NULL
-//     },
-//     "ANNOTATIONS":{
-//       "BOLD":FALSE,
-//       "ITALIC":FALSE,
-//       "STRIKETHROUGH":FALSE,
-//       "UNDERLINE":FALSE,
-//       "CODE":FALSE,
-//       "COLOR":"DEFAULT"},
-//       "PLAIN_TEXT":"NAUSEA ANSIOSA",
-//       "HREF":NULL}
-//     ]
-//   }
-
-
-
 const page = () => {
   return (
     <div className="mandala-page-container">

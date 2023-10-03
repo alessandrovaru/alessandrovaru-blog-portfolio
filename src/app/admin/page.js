@@ -5,6 +5,8 @@ import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '@/context/AuthContext'
 
+import './styles.css'
+
 
 const page = () => {
 
@@ -25,6 +27,9 @@ const page = () => {
   const handleCreateMandala = () => {
     router.push("/admin/mandalas/create")
   }
+  const handleCreateMixtape = () => {
+    router.push("/admin/mixtapes-de-caracas/create")
+  }
 
   React.useEffect(() => {
       if (user == null) router.push("/signin")
@@ -33,11 +38,11 @@ const page = () => {
 
 
   return (
-    <div>
+    <div className='admin-container container'>
       <h1>Admin Page</h1>
       <p>Logged in as {user?.email}</p>
       <button onClick={handleCreateMandala}>Crear Mandala</button>
-      <button onClick={handleSignOut}>Crear Mixtape</button>
+      <button onClick={handleCreateMixtape}>Crear Mixtape</button>
       <button onClick={handleSignOut}>Sign Out</button>
     </div>
   )

@@ -1,20 +1,21 @@
 import MixtapesLanding from "@/components/MixtapesLanding"
 
-import { fetchMixtapesPages } from "@/lib/notion";
-
-import { notFound } from "next/navigation";
 
 import background from "/public/images/p3.jpg";
+import listData from "@/firebase/firestore/listData";
 
-const pages = await fetchMixtapesPages();
-if (!pages) notFound();
 
-const pagesList = pages.map((page) => {
+const pagesFb = await listData('mixtapes-de-caracas');
+
+
+const pagesListFb = pagesFb.map((page) => {
+  console.log(page);
   return {
-    title: page.properties.Title.title[0].text.content,
-    url: `/mixtapes-de-caracas/${page.properties.slug.rich_text[0].plain_text}`
+    title: page.title,
+    url: `/mixtapes-de-caracas/${page.slug}`
   }
 })
+
 
 
 
@@ -22,7 +23,7 @@ const page = () => {
   return (
     <>
       <MixtapesLanding 
-        pagesList={pagesList} 
+        pagesList={pagesListFb} 
         background={background}
       />
     </>

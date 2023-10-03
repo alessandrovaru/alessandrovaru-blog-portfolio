@@ -13,6 +13,10 @@ import './styles.css';
 import Image from 'next/image';
 
 const NavigationBar = () => {
+  // Make the navbar close once a link is clicked
+  const closeNavbar = () => {
+    document.querySelector('.navbar-toggler').click();
+  }
     return (
       <>
         {[false].map((expand) => (
@@ -32,9 +36,9 @@ const NavigationBar = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Link className='nav-link' href="/mandalas">MANDALAS</Link>
-                    <Link className='nav-link' href="/mixtapes-de-caracas">MIXTAPES DE CARACAS</Link>
-                    <Link className='nav-link' href="/contact">CONTACT</Link>
+                    <Link onClick={closeNavbar} className='nav-link' href="/mandalas">MANDALAS</Link>
+                    <Link onClick={closeNavbar} className='nav-link' href="/mixtapes-de-caracas">MIXTAPES DE CARACAS</Link>
+                    <Link onClick={closeNavbar} className='nav-link' href="/contact">CONTACT</Link>
                   </Nav>
                   
                 </Offcanvas.Body>
