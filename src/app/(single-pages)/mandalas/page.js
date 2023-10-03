@@ -18,7 +18,6 @@ const pagesFb = await listData('mandalas');
 
 
 const pagesListFb = pagesFb.map((page) => {
-  console.log(page);
   return {
     title: page.title,
     url: `/mandalas-fb/${page.slug}`

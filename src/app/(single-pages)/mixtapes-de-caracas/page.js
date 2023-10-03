@@ -9,7 +9,6 @@ const pagesFb = await listData('mixtapes-de-caracas');
 
 
 const pagesListFb = pagesFb.map((page) => {
-  console.log(page);
   return {
     title: page.title,
     url: `/mixtapes-de-caracas/${page.slug}`

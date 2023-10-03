@@ -28,6 +28,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+      <script src="https://kit.fontawesome.com/0634a1d485.js" crossorigin="anonymous"></script>
+      </head>
       <body className={`${microgramma.className} ${questrial.variable}`}>
         <AuthContextProvider>
           <Nav />

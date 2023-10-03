@@ -8,5 +8,13 @@
   & span{
     font-family: var(--questrial-font);
   }
-  
+}
+
+@media (max-width: 900px){
+  .footer{
+    font-size: 8px;
+  }
+  i{
+    font-size: 18px !important;
+  }
 }
