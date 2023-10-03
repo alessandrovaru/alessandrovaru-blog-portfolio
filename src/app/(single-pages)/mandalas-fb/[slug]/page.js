@@ -46,6 +46,7 @@ const page = ({ params : { slug } }) => {
 
   return (
     <div className='container'>
+      <PostImagesSlider storageResult={storageResult} result={result} />
       {result.map((item) => (
         <div key={item.slug}>
           <h1>{item.title}</h1>
@@ -53,8 +54,6 @@ const page = ({ params : { slug } }) => {
         </div>
       ))      
       }
-      <PostImagesSlider storageResult={storageResult} result={result} />
-      
     </div>
   )
 }
