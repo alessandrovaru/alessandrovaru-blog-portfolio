@@ -17,16 +17,19 @@
     & .fantasia-subtitle{
       font-family: var(--questrial-font) !important;
       text-transform: none !important;
+      color: white !important;
       font-size: 1.5rem;
     }
     & .fantasia-description-title{
       font-family: var(--questrial-font) !important;
       text-transform: none !important;
+      color: white !important;
       font-size: 1.5rem;
     }
     & .fantasia-article-subtitle{
       font-family: var(--questrial-font) !important;
       text-transform: none !important;
+      color: white !important;
       font-size: 1.5rem;
     }
     & .fantasia-image{
