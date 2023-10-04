@@ -8,7 +8,7 @@ import { useAuthContext } from '@/context/AuthContext'
 import './styles.css'
 
 
-const page = () => {
+const Page = () => {
 
   const { user } = useAuthContext()
 
@@ -48,4 +48,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

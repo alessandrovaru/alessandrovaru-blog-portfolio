@@ -10,7 +10,7 @@ import '../../styles.css'
 
 
 
-const page = () => {
+const Page = () => {
   const [result, setResult] = useState([]);
 
   const { user } = useAuthContext()
@@ -81,4 +81,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

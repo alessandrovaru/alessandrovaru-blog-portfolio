@@ -14,7 +14,7 @@ import { useRouter } from 'next/navigation'
 
 
 
-const page = ({ params : { slug } }) => {
+const Page = ({ params : { slug } }) => {
   const [result, setResult] = useState([]);
   const [resultUnfiltered, setResultUnfiltered] = useState([]);
   const [storageResult, setStorageResult] = useState([]);
@@ -74,4 +74,4 @@ const page = ({ params : { slug } }) => {
   )
 }
 
-export default page
+export default Page

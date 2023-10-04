@@ -18,7 +18,7 @@ const pagesListFb = pagesFb.map((page) => {
 
 
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <MixtapesLanding 
@@ -29,4 +29,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

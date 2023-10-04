@@ -25,7 +25,7 @@ const pagesListFb = pagesFb.map((page) => {
 })
 
 
-const page = () => {
+const Page = () => {
   return (
     <div className="mandala-page-container">
       <MandalaButton content={pageContent} pagesList={pagesListFb} />
@@ -33,4 +33,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
