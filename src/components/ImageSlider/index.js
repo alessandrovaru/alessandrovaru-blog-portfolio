@@ -11,24 +11,6 @@ const index = (props) => {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-      document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
-      document.getElementsByClassName('notion-column_list')[0].classList.add('swiper-wrapper');
-      let images = document.getElementsByClassName('notion-column').length
-      for (let i = 0; i < images; i++) {
-        document.getElementsByClassName('notion-column')[i].classList.add('swiper-slide');
-      }
-      const swiperElement = document.querySelector('.mySwiper');
-      let swiper = new Swiper(swiperElement, {
-        modules: [FreeMode],
-        slidesPerView: "auto",
-        grabCursor: true,
-        freeMode: true,
-        spaceBetween: 30,
-      }); 
-      swiper.init();
-  }, []);
-
 
   
   return (

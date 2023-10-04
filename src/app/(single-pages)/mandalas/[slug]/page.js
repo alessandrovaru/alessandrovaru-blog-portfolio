@@ -1,40 +1,64 @@
+'use client'
+import React from 'react'
 
-import { fetchPageBlocks, fetchMandalasPageBySlug, notion } from "@/lib/notion";
-import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import { NotionRenderer } from "@notion-render/client";
-import hljsPlugin from "@notion-render/hljs-plugin";
-import { notFound } from "next/navigation";
+import DOMPurify from 'dompurify';
 
-import ImageSlider from '@/components/ImageSlider'
+
+import  listData  from '@/firebase/firestore/listData'
+import  listStorageData  from '@/firebase/storage/listStorageData'
+import PostImagesSlider from '@/components/PostImagesSlider'
 
 import './styles.css'
+import Loading from '@/components/LoadingMandala';
 
-export default async function Page({ params : { slug } }) {
-  const post = await fetchMandalasPageBySlug(slug);
-  if (!post) notFound();
 
-  const blocks = await fetchPageBlocks(post.id);
-  // delete the [2] of blocks
+const page = ({ params : { slug } }) => {
+  const [result, setResult] = React.useState([]);
+  const [storageResult, setStorageResult] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
   
-
-  const renderer = new NotionRenderer({
-    client: notion,
-  });
-
-  renderer.use(hljsPlugin());
-  renderer.use(bookmarkPlugin());
-
-  const images = await renderer.render(blocks[1]);
-
-  blocks.splice(1, 1);
   
-  const html = await renderer.render(...blocks);
+  //fetchItems
+  React.useEffect(() => {
+    async function fetchItems() {
+      const items = await listData('mandalas');
+      const filteredItems = items.filter(item => item.slug === slug)
+      setResult(filteredItems);
+      setLoading(false);
+    }
+
+    fetchItems();
+  }, []);
+
+  //fetchStorageItems
+  React.useEffect(() => {
+    if (result.length > 0) {
+      async function fetchStorageItems() {
+        const items = await listStorageData(`mandalas/${result[0].storage_slug}`);
+        setStorageResult(items);
+      }
+      fetchStorageItems();
+    }
+  }, [result]);
+
+  if (loading) {
+    return <Loading />;
+  }
+
 
 
   return (
-    <div className="notion-container">
-      <ImageSlider images={images}/>
-      <div className="container" dangerouslySetInnerHTML={{ __html: html }} />
+    <div className='mandala-container container'>
+      <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
+      {result.map((item) => (
+        <div className='mandala-wrapper' key={item.slug}>
+          <h1 className='mandala-title mt-3'>{item.title}</h1>
+          <p className='mandala-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+        </div>
+      ))      
+      }
     </div>
-  );
+  )
 }
+
+export default page

@@ -38,7 +38,6 @@ const NavigationBar = () => {
                   <Nav className="justify-content-end flex-grow-1 pe-3">
                     <Link onClick={closeNavbar} className='nav-link' href="/mandalas">MANDALAS</Link>
                     <Link onClick={closeNavbar} className='nav-link' href="/mixtapes-de-caracas">MIXTAPES DE CARACAS</Link>
-                    <Link onClick={closeNavbar} className='nav-link' href="/contact">CONTACT</Link>
                   </Nav>
                   
                 </Offcanvas.Body>

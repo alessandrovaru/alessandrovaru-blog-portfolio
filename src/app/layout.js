@@ -2,14 +2,12 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Questrial } from "next/font/google";
 
 import localFont from "next/font/local";
 import { AuthContextProvider } from "@/context/AuthContext";
 
-const questrial = Questrial({ 
-  subsets: ["latin"],
-  weight: '400', 
+const questrial = localFont({ 
+  src: "../../public/fonts/questrial.ttf",
   variable: '--questrial-font'
 })
 
@@ -32,11 +30,10 @@ export default function RootLayout({ children }) {
       <script src="https://kit.fontawesome.com/0634a1d485.js" crossorigin="anonymous"></script>
       </head>
       <body className={`${microgramma.className} ${questrial.variable}`}>
-        <AuthContextProvider>
+        
           <Nav />
           {children}
           <Footer />
-        </AuthContextProvider>
       </body>
     </html>
   );

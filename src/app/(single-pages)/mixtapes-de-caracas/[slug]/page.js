@@ -1,40 +1,66 @@
+'use client'
+import React from 'react'
 
-import { fetchPageBlocks, fetchMixtapesPageBySlug, notion } from "@/lib/notion";
-import bookmarkPlugin from "@notion-render/bookmark-plugin";
-import { NotionRenderer } from "@notion-render/client";
-import hljsPlugin from "@notion-render/hljs-plugin";
-import { notFound } from "next/navigation";
+import DOMPurify from 'dompurify';
 
-import ImageSlider from '@/components/ImageSlider'
+
+import { useRouter } from 'next/navigation'
+import { useAuthContext } from '@/context/AuthContext'
+
+import  listData  from '@/firebase/firestore/listData'
+import  listStorageData  from '@/firebase/storage/listStorageData'
+import PostImagesSlider from '@/components/PostImagesSlider'
 
 import './styles.css'
 
-export default async function Page({ params : { slug } }) {
-  const post = await fetchMixtapesPageBySlug(slug);
-  if (!post) notFound();
 
-  const blocks = await fetchPageBlocks(post.id);
-  // delete the [2] of blocks
+const page = ({ params : { slug } }) => {
+  const [result, setResult] = React.useState([]);
+  const [storageResult, setStorageResult] = React.useState([]);
+  const { user } = useAuthContext()
+  const router = useRouter();
   
+  //fetchItems
+  React.useEffect(() => {
+    async function fetchItems() {
+      const items = await listData('mixtapes-de-caracas');
+      const filteredItems = items.filter(item => item.slug === slug)
+      setResult(filteredItems);
+    }
 
-  const renderer = new NotionRenderer({
-    client: notion,
-  });
+    fetchItems();
+  }, []);
 
-  renderer.use(hljsPlugin());
-  renderer.use(bookmarkPlugin());
+  //fetchStorageItems
+  React.useEffect(() => {
+    if (result.length > 0) {
+      async function fetchStorageItems() {
+        const items = await listStorageData(`mixtapes-de-caracas/${result[0].storage_slug}`);
+        setStorageResult(items);
+      }
+      fetchStorageItems();
+    }
+  }, [result]);
 
-  const images = await renderer.render(blocks[1]);
-
-  blocks.splice(1, 1);
-  
-  const html = await renderer.render(...blocks);
+  //Redirect if not logged in
+  React.useEffect(() => {
+      if (user == null) router.push("/signin");
+  }
+  , []);
 
 
   return (
-    <div className="notion-container">
-      <ImageSlider images={images}/>
-      <div className="container" dangerouslySetInnerHTML={{ __html: html }} />
+    <div className='mixtapes-container container'>
+      <PostImagesSlider storageResult={storageResult} result={result} storage={'mixtapes-de-caracas'} />
+      {result.map((item) => (
+        <div className='mixtapes-wrapper' key={item.slug}>
+          <h1 className='mixtapes-title mt-3'>{item.title}</h1>
+          <p className='mixtapes-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+        </div>
+      ))      
+      }
     </div>
-  );
+  )
 }
+
+export default page
