@@ -24,6 +24,24 @@ const microgramma = localFont({
 export const metadata = {
   title: "Alessandrovaru",
   description: "Alessandro Varuzza personal website",
+  generator: "Next.js",
+  applicationName: "alessandrovaru-blog-portfolio",
+  referrer: 'origin-when-cross-origin',
+  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías'],
+  colorScheme: 'dark',
+  creator: 'Alessandro Varuzza',
+  publisher: 'Alessandro Varuzza',
+  formatDetection: ['telephone=no', 'email=no', 'address=no'],
+  metadataBase: new URL('https://alessandrovaru.com/'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'es-VE': '/es',
+    }
+  },
+  openGraph: {
+    images: '/public/logo.ico',
+  }
 };
 
 export default function RootLayout({ children }) {
