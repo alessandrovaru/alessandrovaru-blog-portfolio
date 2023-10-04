@@ -1,7 +1,26 @@
 import Image from 'next/image';
 import './styles.css';
 
-import fantasiaLogo  from '/public/images/logos/fantasias.png';
+export const metadata = {
+  title: "Fantasías - Episodio 1",
+  description: "Documental contemplativo ambientado en la ciudad de Caracas, Venezuela.",
+  generator: "Next.js",
+  applicationName: "alessandrovaru-blog-portfolio",
+  referrer: 'origin-when-cross-origin',
+  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías', 'Baraka', 'Documental Contemplativo', 'Documental', 'Ron Fricke', 'surrealism'],
+  colorScheme: 'dark',
+  creator: 'Alessandro Varuzza',
+  publisher: 'Alessandro Varuzza',
+  formatDetection: ['telephone=no', 'email=no', 'address=no'],
+  metadataBase: new URL('https://alessandrovaru.com/fantasias'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'es-VE': '/es',
+    }
+  },
+};
+
 function Page() {
 
   return (
@@ -10,7 +29,7 @@ function Page() {
         <article>
             <h1 className='fantasia-title'>Fantasías</h1>
             <h2 className='fantasia-subtitle mb-2'>Episodio 1</h2>
-            <iframe src="https://www.youtube.com/embed/6S3LJwS9jdg?si=xy7iMxqDwu4_lGsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {/* <iframe src="https://www.youtube.com/embed/6S3LJwS9jdg?si=xy7iMxqDwu4_lGsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             <h3 className='fantasia-description-title mt-2'>Descripción</h3>
             <section>
               <p>Fantasías es una serie documental contemplativa de la ciudad de Caracas.</p>

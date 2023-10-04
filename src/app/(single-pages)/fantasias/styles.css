@@ -12,8 +12,6 @@
       height: 86vh;
     }
     & .fantasia-title{
-      font-family: var(--questrial-font) !important;
-      text-transform: none !important;
       font-size: 2rem;
     }
     & .fantasia-subtitle{
