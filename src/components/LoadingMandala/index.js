@@ -5,7 +5,7 @@ import logoMandala from '/public/images/logos/mandalawhite.png'
 
 import './styles.css'
 
-const index = () => {
+const LoadingMandala = () => {
   return (
     <div className='loading-container'>
       <Image src={logoMandala} alt='logo mandala' className='img-fluid loading-mandala' />
@@ -14,4 +14,4 @@ const index = () => {
   )
 }
 
-export default index
+export default LoadingMandala

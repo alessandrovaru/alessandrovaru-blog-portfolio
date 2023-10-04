@@ -9,7 +9,7 @@ import "./styles.css";
 import Image from "next/image";
 
 
-const index = (props) => {
+const MandalaButton = (props) => {
   const [mandalaClicked, setMandalaClicked] = useState(false);
   const [poemClicked, setPoemClicked] = useState(false);
   const [acceptedLink, setAcceptedLink] = useState(false);
@@ -105,7 +105,7 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default MandalaButton;
 
 // create a const which will be a json that contains the links and the text
 

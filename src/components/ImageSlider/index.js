@@ -7,7 +7,7 @@ import { FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
-const index = (props) => {
+const ImageSlider = (props) => {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -26,4 +26,4 @@ const index = (props) => {
   )
 }
 
-export default index
+export default ImageSlider

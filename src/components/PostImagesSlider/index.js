@@ -15,7 +15,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const index = (props) => {
+const PostImagesSlider = (props) => {
   const [show, setShow] = useState(false);
   const [image, setImage] = useState(false);
 
@@ -57,4 +57,4 @@ const index = (props) => {
   )
 }
 
-export default index
+export default PostImagesSlider

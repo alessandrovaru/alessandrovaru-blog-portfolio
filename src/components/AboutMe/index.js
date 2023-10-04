@@ -1,6 +1,6 @@
 import './styles.css'
 
-const index = () => {
+const AboutMe = () => {
   return (
     <div className="AboutMe d-flex align-items-center">
       <div className="container">
@@ -14,4 +14,4 @@ const index = () => {
   )
 }
 
-export default index
+export default AboutMe

@@ -8,7 +8,7 @@ import logo from "/public/images/logo-mixtapes.png";
 
 import "./styles.css";
 
-const index = (props) => {
+const MixtapesLanding = (props) => {
 
   
   // Tilt function
@@ -81,9 +81,8 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default MixtapesLanding;
 
-// create a const which will be a json that contains the links and the text
 
 
 

@@ -19,7 +19,7 @@ import logoMandalas from "/public/images/logos/mandalawhite.png";
 import logoFantasias from "/public/images/logos/fantasias.png";
 import Link from 'next/link';
 
-const index = () => {
+const HomeSlider = () => {
   const slides = [
     {
       title: 'Mandalas',
@@ -91,4 +91,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default HomeSlider;
