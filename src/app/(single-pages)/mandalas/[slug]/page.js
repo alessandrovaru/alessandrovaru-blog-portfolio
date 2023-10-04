@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import {useEffect, useState} from 'react'
 
 import DOMPurify from 'dompurify';
 
@@ -15,14 +15,14 @@ import { useRouter } from 'next/navigation'
 
 
 const page = ({ params : { slug } }) => {
-  const [result, setResult] = React.useState([]);
-  const [resultUnfiltered, setResultUnfiltered] = React.useState([]);
-  const [storageResult, setStorageResult] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
+  const [result, setResult] = useState([]);
+  const [resultUnfiltered, setResultUnfiltered] = useState([]);
+  const [storageResult, setStorageResult] = useState([]);
+  const [loading, setLoading] = useState(true);
   
   const router = useRouter()
   //fetchItems
-  React.useEffect(() => {
+  useEffect(() => {
     async function fetchItems() {
       const items = await listData('mandalas');
       const filteredItems = items.filter(item => item.slug === slug)
@@ -35,7 +35,7 @@ const page = ({ params : { slug } }) => {
   }, []);
 
   //fetchStorageItems
-  React.useEffect(() => {
+  useEffect(() => {
     if (result.length > 0) {
       async function fetchStorageItems() {
         const items = await listStorageData(`mandalas/${result[0].storage_slug}`);

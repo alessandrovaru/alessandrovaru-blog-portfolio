@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import {useEffect} from 'react'
 
 import { getAuth, signOut } from "firebase/auth";
 import { useRouter } from 'next/navigation'
@@ -31,7 +31,7 @@ const page = () => {
     router.push("/admin/mixtapes-de-caracas/create")
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
       if (user == null) router.push("/signin")
   }, [user])
 

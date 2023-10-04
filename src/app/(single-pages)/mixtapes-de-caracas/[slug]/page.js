@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import {useEffect, useState} from 'react'
 
 import DOMPurify from 'dompurify';
+
 
 
 import LoadingMandala from '@/components/LoadingMandala';
@@ -16,15 +17,15 @@ import './styles.css'
 
 
 const page = ({ params : { slug } }) => {
-  const [result, setResult] = React.useState([]);
-  const [resultUnfiltered, setResultUnfiltered] = React.useState([]);
-  const [storageResult, setStorageResult] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
+  const [result, setResult] = useState([]);
+  const [resultUnfiltered, setResultUnfiltered] = useState([]);
+  const [storageResult, setStorageResult] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const router = useRouter()
   
   //fetchItems
-  React.useEffect(() => {
+  useEffect(() => {
     async function fetchItems() {
       const items = await listData('mixtapes-de-caracas');
       const filteredItems = items.filter(item => item.slug === slug)
@@ -36,7 +37,7 @@ const page = ({ params : { slug } }) => {
   }, []);
 
   //fetchStorageItems
-  React.useEffect(() => {
+  useEffect(() => {
     if (result.length > 0) {
       async function fetchStorageItems() {
         const items = await listStorageData(`mixtapes-de-caracas/${result[0].storage_slug}`);

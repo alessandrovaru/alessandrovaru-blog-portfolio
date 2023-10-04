@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import {useEffect, useState} from 'react'
 
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '@/context/AuthContext'
@@ -9,7 +9,7 @@ import  addData  from '@/firebase/firestore/addData'
 
 
 const page = () => {
-  const [result, setResult] = React.useState([]);
+  const [result, setResult] = useState([]);
 
   const { user } = useAuthContext()
 
@@ -36,11 +36,11 @@ const page = () => {
     e.target['storage-slug'].value = '';
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
       if (user == null) router.push("/signin");
   }, [user]);
 
-  // React.useEffect(() => {
+  // useEffect(() => {
   //   async function fetchItems() {
   //     const items = await listData();
   //     setResult(items);

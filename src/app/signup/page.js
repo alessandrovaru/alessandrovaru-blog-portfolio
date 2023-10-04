@@ -1,11 +1,11 @@
 'use client'
-import React from "react";
+import {useState} from 'react'
 import signUp from "@/firebase/auth/signup";
 import { useRouter } from 'next/navigation'
 
 function Page() {
-    const [email, setEmail] = React.useState('')
-    const [password, setPassword] = React.useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const router = useRouter()
 
     const handleForm = async (event) => {
