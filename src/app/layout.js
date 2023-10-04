@@ -40,7 +40,7 @@ export const metadata = {
     }
   },
   openGraph: {
-    images: '/public/logo.ico',
+    images: '/public/mandala.ico',
   }
 };
 
