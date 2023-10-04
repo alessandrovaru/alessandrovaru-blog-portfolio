@@ -28,7 +28,8 @@ const index = () => {
       alt: 'Mandalas',
       logo: logoMandalas.src,
       logo_alt: 'Logo de Mandalas',
-      logo_class: 'logoMandalas'
+      logo_class: 'logoMandalas',
+      url:'mandalas'
     }, 
     {
       title : 'Mixtapes de Caracas',
@@ -37,7 +38,8 @@ const index = () => {
       alt: 'Mixtapes de Caracas',
       logo: logoMixtapes.src,
       logo_alt: 'Logo de Mixtapes de Caracas',
-      logo_class: 'logoMixtapes'
+      logo_class: 'logoMixtapes',
+      url:'mixtapes-de-caracas'
     },
     {
       title: 'Fantasías',
@@ -46,7 +48,8 @@ const index = () => {
       alt: 'Fantasías',
       logo: logoFantasias.src,
       logo_alt: 'Logo de Fantasías',
-      logo_class: 'logoFantasias'
+      logo_class: 'logoFantasias',
+      url:'fantasias'
     }
 
 
@@ -77,7 +80,7 @@ const index = () => {
                   <h1 className='mb-3'>{slide.title}</h1>
                   <p className='mb-3'>{slide.description}</p>
                   {/* Create a transparent button that change on hover */}
-                  <Link href="/mandalas" className="btn home-slider-button">Ver más</Link>
+                  <Link href={slide.url} className="btn home-slider-button">Ver más</Link>
                 </div>  
               </div>
             </div>

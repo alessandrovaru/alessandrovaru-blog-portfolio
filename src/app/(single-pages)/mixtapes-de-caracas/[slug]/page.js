@@ -4,8 +4,7 @@ import React from 'react'
 import DOMPurify from 'dompurify';
 
 
-import { useRouter } from 'next/navigation'
-import { useAuthContext } from '@/context/AuthContext'
+import LoadingMandala from '@/components/LoadingMandala';
 
 import  listData  from '@/firebase/firestore/listData'
 import  listStorageData  from '@/firebase/storage/listStorageData'
@@ -17,8 +16,7 @@ import './styles.css'
 const page = ({ params : { slug } }) => {
   const [result, setResult] = React.useState([]);
   const [storageResult, setStorageResult] = React.useState([]);
-  const { user } = useAuthContext()
-  const router = useRouter();
+  const [loading, setLoading] = React.useState(true);
   
   //fetchItems
   React.useEffect(() => {
@@ -39,15 +37,13 @@ const page = ({ params : { slug } }) => {
         setStorageResult(items);
       }
       fetchStorageItems();
+      setLoading(false);
     }
   }, [result]);
 
-  //Redirect if not logged in
-  React.useEffect(() => {
-      if (user == null) router.push("/signin");
+  if (loading) {
+    return <LoadingMandala />;
   }
-  , []);
-
 
   return (
     <div className='mixtapes-container container'>
