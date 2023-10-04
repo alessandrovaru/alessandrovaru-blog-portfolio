@@ -3,6 +3,9 @@ import Nav from "@/components/Nav";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { Analytics } from '@vercel/analytics/react';
+
+
 import localFont from "next/font/local";
 import { AuthContextProvider } from "@/context/AuthContext";
 
@@ -33,6 +36,7 @@ export default function RootLayout({ children }) {
           <Nav />
           {children}
           <Footer />
+          <Analytics />
       </body>
     </html>
   );
