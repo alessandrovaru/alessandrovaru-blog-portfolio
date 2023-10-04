@@ -32,3 +32,8 @@ body p{
   font-family: var(--questrial-font) !important;
   color: white;
 }
+
+body button{
+  font-family: var(--questrial-font) !important;
+  color: white;
+}

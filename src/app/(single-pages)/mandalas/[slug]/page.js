@@ -10,19 +10,23 @@ import PostImagesSlider from '@/components/PostImagesSlider'
 
 import './styles.css'
 import Loading from '@/components/LoadingMandala';
+import { useRouter } from 'next/navigation'
+
 
 
 const page = ({ params : { slug } }) => {
   const [result, setResult] = React.useState([]);
+  const [resultUnfiltered, setResultUnfiltered] = React.useState([]);
   const [storageResult, setStorageResult] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   
-  
+  const router = useRouter()
   //fetchItems
   React.useEffect(() => {
     async function fetchItems() {
       const items = await listData('mandalas');
       const filteredItems = items.filter(item => item.slug === slug)
+      setResultUnfiltered(items);
       setResult(filteredItems);
       setLoading(false);
     }
@@ -41,6 +45,13 @@ const page = ({ params : { slug } }) => {
     }
   }, [result]);
 
+  const otherRandomMandala = () => {
+    //use resultUnfiltered
+    const filteredItems = resultUnfiltered.filter(item => item.slug !== slug)
+    const randomItem = filteredItems[Math.floor(Math.random() * filteredItems.length)];
+    router.push(`/mandalas/${randomItem.slug}`)
+  }
+
   if (loading) {
     return <Loading />;
   }
@@ -57,6 +68,8 @@ const page = ({ params : { slug } }) => {
         </div>
       ))      
       }
+      <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
+      <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
     </div>
   )
 }
