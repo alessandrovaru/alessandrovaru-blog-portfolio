@@ -28,8 +28,9 @@ function Page() {
       <div className='fantasia-wrapper'>
         <article>
             <h1 className='fantasia-title'>Fantasías</h1>
-            <h2 className='fantasia-subtitle mb-2'>Episodio 1</h2>
-            <iframe src="https://www.youtube.com/embed/YLVDs2DRre8?si=HQ88GaEueOe7IBwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h2 className='fantasia-subtitle mb-2'>Episodio 2</h2>
+            <iframe src="https://www.youtube.com/embed/rX8mLxA7FZc?si=xLXnNUVGp1_dR5hp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {/* <iframe src="https://www.youtube.com/embed/YLVDs2DRre8?si=HQ88GaEueOe7IBwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             <h3 className='fantasia-description-title mt-2'>Descripción</h3>
             <section>
               <p>Fantasías es una serie documental contemplativa de la ciudad de Caracas.</p>
