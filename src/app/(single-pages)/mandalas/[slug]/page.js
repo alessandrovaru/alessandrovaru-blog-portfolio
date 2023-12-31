@@ -8,9 +8,10 @@ import  listData  from '@/firebase/firestore/listData'
 import  listStorageData  from '@/firebase/storage/listStorageData'
 import PostImagesSlider from '@/components/PostImagesSlider'
 
-import './styles.css'
 import Loading from '@/components/LoadingMandala';
 import { useRouter } from 'next/navigation'
+
+import styles from './styles.module.css'
 
 
 
@@ -59,12 +60,12 @@ const Page = ({ params : { slug } }) => {
 
 
   return (
-    <div className='mandala-container container'>
+    <div className={styles.mandalaContainer + ' ' + 'container'}>
       <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
       {result.map((item) => (
-        <div className='mandala-wrapper' key={item.slug}>
-          <h1 className='mandala-title mt-3'>{item.title}</h1>
-          <p className='mandala-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+        <div className={''} key={item.slug}>
+          <h1 className={styles.h1 +  ' ' + 'mt-3'}>{item.title}</h1>
+          <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
         </div>
       ))      
       }

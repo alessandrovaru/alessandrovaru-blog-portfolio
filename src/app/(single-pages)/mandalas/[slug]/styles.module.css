@@ -1,0 +1,12 @@
+.mandalaContainer{
+  min-height: 86vh;
+  background-color: red;
+}
+
+.h1{ 
+  color: rgb(10, 20, 14);
+}
+
+.p{
+  color: rgb(10, 20, 14);
+}
