@@ -60,17 +60,22 @@ const Page = ({ params : { slug } }) => {
 
 
   return (
-    <div className={styles.mandalaContainer + ' ' + 'container'}>
-      <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
-      {result.map((item) => (
-        <div className={''} key={item.slug}>
-          <h1 className={styles.h1 +  ' ' + 'mt-3'}>{item.title}</h1>
-          <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
-        </div>
-      ))      
-      }
-      <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
-      <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+    <div className={styles.mandalaContainer + ' ' + 'container-fluid'}>
+      <div className={styles.postImageSlider}>
+        <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
+      </div>
+
+      <div className={styles.postContent}>
+        {result.map((item) => (
+          <div className={''} key={item.slug}>
+            <h1 className={styles.h1 +  ' ' + 'mt-3'}>{item.title}</h1>
+            <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+          </div>
+        ))      
+        }
+        <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
+        <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+      </div>
     </div>
   )
 }

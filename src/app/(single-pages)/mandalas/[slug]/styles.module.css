@@ -1,6 +1,10 @@
 .mandalaContainer{
   min-height: 86vh;
-  background-color: red;
+  display: grid;
+  grid-template-areas:
+  "postImageSlider postContent";
+  grid-template-columns: 1fr 2fr; /* This will make the postImageSlider area take up 1 fraction of the space, and the postContent area take up 2 fractions of the space. */
+  grid-gap: 10px; /* This will add a 10px gap between the grid items. */
 }
 
 .h1{ 
@@ -9,4 +13,19 @@
 
 .p{
   color: rgb(10, 20, 14);
+}
+
+.postImageSlider{
+  grid-area: postImageSlider;
+  grid-row: 1 / 2;
+  grid-column: 1; 
+  width: 50vw;
+  cursor: grab;
+}
+
+.postContent{
+  grid-area: postContent;
+  grid-row: 1 / 2;
+  grid-column: 2; /* This will position the postContent in the second column. */
+  
 }
