@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 86vh;
+    height: 96vh;
     width: 100%;
     flex-direction: column;
     & .loading-mandala{

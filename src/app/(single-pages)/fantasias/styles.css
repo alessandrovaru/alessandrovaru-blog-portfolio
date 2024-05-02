@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 86vh;
+    min-height: 96vh;
     padding-top: 80px;
     &.fantasia-wrapper{
       display: flex;
       flex-direction: column;
       
-      height: 86vh;
+      height: 96vh;
     }
     & .fantasia-title{
       font-size: 2rem;
