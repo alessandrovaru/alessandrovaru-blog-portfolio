@@ -60,21 +60,23 @@ const Page = ({ params : { slug } }) => {
 
 
   return (
-    <div className={styles.mandalaContainer + ' ' + 'container-fluid'}>
+    <div className={styles.mandalaContainer}>
       <div className={styles.postImageSlider}>
         <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
       </div>
 
       <div className={styles.postContent}>
         {result.map((item) => (
-          <div className={''} key={item.slug}>
+          <div className={styles.textContainer} key={item.slug}>
             <h1 className={styles.h1 +  ' ' + 'mt-3'}>{item.title}</h1>
             <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+          
+            <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
+            <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
           </div>
         ))      
         }
-        <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
-        <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+        
       </div>
     </div>
   )
