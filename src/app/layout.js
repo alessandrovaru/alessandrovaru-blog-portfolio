@@ -50,7 +50,6 @@ export default function RootLayout({ children }) {
       <script async src="https://kit.fontawesome.com/0634a1d485.js" crossOrigin="anonymous"></script>
       </head>
       <body className={`${microgramma.className} ${questrial.variable}`}>
-          <Nav />
           {children}
           <Footer />
           <Analytics />

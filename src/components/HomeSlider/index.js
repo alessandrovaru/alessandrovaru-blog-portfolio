@@ -56,7 +56,7 @@ const HomeSlider = () => {
   ];
     
   return (
-    <div className='container'>
+    <div>
       <Swiper
         className='homeSlider'
         modules={[Navigation, Pagination]}
