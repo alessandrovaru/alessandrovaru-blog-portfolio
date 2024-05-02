@@ -73,6 +73,8 @@ const Page = ({ params : { slug } }) => {
           
             <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
             <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+            {/* make one to go to the rooth */}
+            <button onClick={() => router.push('/')} className='btn btn-light mt-3 me-3'>Home</button>
           </div>
         ))      
         }
