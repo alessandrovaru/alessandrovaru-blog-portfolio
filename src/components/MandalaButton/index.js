@@ -67,7 +67,7 @@ const MandalaButton = (props) => {
 `
 
   return (
-    <section className="mandala-button-container container">
+    <section className="mandala-button-container">
       <div
         className="mandala-button"
         style={{

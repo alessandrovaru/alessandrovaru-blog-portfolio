@@ -16,7 +16,7 @@
 
 .mandala-button{
   height: 100%;
-  border-radius: 15px;
+  width: 100%;
 }
 
 .mandala-button .container{
