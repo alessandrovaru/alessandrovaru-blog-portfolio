@@ -7,6 +7,7 @@ import logo from "/public/images/logo-mixtapes.png";
 
 
 import "./styles.css";
+import Link from "next/link";
 
 const MixtapesLanding = (props) => {
 
@@ -73,6 +74,7 @@ const MixtapesLanding = (props) => {
               {/* Create a smaller fontsize p */}
               <p className="instructions">Lamentablemente, los Mixtapes hasta el volumen 12 se perdieron en un disco duro que se dañó, pero logré recuperarlas de mis redes sociales.</p>
               <p className="instructions">Para ver las fotos, haz click en el título de cada Mixtape.</p>
+              <Link href='/' className='btn btn-light mt-3 me-3'>Home</Link>
            </div>
           </div>
         </div>
