@@ -8,7 +8,6 @@ export const metadata = {
   applicationName: "alessandrovaru-blog-portfolio",
   referrer: 'origin-when-cross-origin',
   keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías', 'Baraka', 'Documental Contemplativo', 'Documental', 'Ron Fricke', 'surrealism'],
-  colorScheme: 'dark',
   creator: 'Alessandro Varuzza',
   publisher: 'Alessandro Varuzza',
   formatDetection: ['telephone=no', 'email=no', 'address=no'],

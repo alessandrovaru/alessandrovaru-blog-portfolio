@@ -1,0 +1,58 @@
+.container{
+  max-height: 96vh;
+  display: grid;
+  grid-template-areas:
+  "postImageSlider postContent";
+  grid-template-columns: 1fr 2fr; /* This will make the postImageSlider area take up 1 fraction of the space, and the postContent area take up 2 fractions of the space. */
+  grid-gap: 10px; /* This will add a 10px gap between the grid items. */
+  overflow: hidden;
+  /* make the scroll be larger as the page window */
+  
+}
+
+
+
+.h1{ 
+  color: rgb(10, 20, 14);
+}
+
+.p{
+  color: rgb(10, 20, 14);
+}
+
+.postImageSlider{
+  grid-area: postImageSlider;
+  width: 50vw;
+  cursor: grab;
+}
+
+.postContent{
+  grid-area: postContent;
+}
+
+.textContainer{
+  padding-left: 40px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  overflow-y: scroll;
+  height: 96vh;
+}
+
+
+/* create mobile */
+@media (max-width: 900px){
+  .mandalaContainer{
+    grid-template-areas:
+    "postImageSlider"
+    "postContent";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .postImageSlider{
+    width: 100vw;
+  }
+  .textContainer{
+    height: 46vh;
+  }
+  
+}

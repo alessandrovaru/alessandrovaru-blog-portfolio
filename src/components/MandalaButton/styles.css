@@ -8,7 +8,7 @@
 }
 
 .mandala-button-container{
-  height: 86vh;
+  height: 96vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
 
 .mandala-button{
   height: 100%;
-  border-radius: 15px;
+  width: 100%;
 }
 
 .mandala-button .container{
@@ -61,6 +61,7 @@
   margin: 0 20px 0 0;
   font-size: 1rem;
   text-transform: uppercase;
+  
   & a{
     color: white;
     text-decoration: none;

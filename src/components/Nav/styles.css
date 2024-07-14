@@ -3,6 +3,8 @@
   height: 8vh;
   width: 100%;
   padding: 0 10%;
+  position: absolute;
+  z-index: 2;
 }
 
 .navbar .img-fluid{

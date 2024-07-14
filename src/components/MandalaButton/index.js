@@ -7,6 +7,7 @@ import background from "/public/images/p1.jpg";
 
 import "./styles.css";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const MandalaButton = (props) => {
@@ -60,14 +61,14 @@ const MandalaButton = (props) => {
     ${props.pagesList.map((page, index) => {
       return `
         <span key=${index}>
-          <a href="${page.url}">${page.title}</a>
+          <Link href="${page.url}">${page.title}</Link>
         </span>
       `
     }).join('')}
 `
 
   return (
-    <section className="mandala-button-container container">
+    <section className="mandala-button-container">
       <div
         className="mandala-button"
         style={{
@@ -96,6 +97,7 @@ const MandalaButton = (props) => {
               <h1>Mandalas</h1>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
                 <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
+                <Link href='/' className='btn btn-light mt-3 me-3'>Home</Link>
             </div>
             </div>
           </div>

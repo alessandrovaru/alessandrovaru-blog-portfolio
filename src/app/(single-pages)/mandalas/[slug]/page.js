@@ -3,16 +3,12 @@ import {useEffect, useState} from 'react'
 
 import DOMPurify from 'dompurify';
 
-
 import  listData  from '@/firebase/firestore/listData'
 import  listStorageData  from '@/firebase/storage/listStorageData'
 import PostImagesSlider from '@/components/PostImagesSlider'
-
-import './styles.css'
 import Loading from '@/components/LoadingMandala';
 import { useRouter } from 'next/navigation'
-
-
+import styles from './styles.module.css'
 
 const Page = ({ params : { slug } }) => {
   const [result, setResult] = useState([]);
@@ -59,17 +55,26 @@ const Page = ({ params : { slug } }) => {
 
 
   return (
-    <div className='mandala-container container'>
-      <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
-      {result.map((item) => (
-        <div className='mandala-wrapper' key={item.slug}>
-          <h1 className='mandala-title mt-3'>{item.title}</h1>
-          <p className='mandala-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
-        </div>
-      ))      
-      }
-      <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
-      <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+    <div className={styles.container}>
+      <div className={styles.postImageSlider}>
+        <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
+      </div>
+
+      <div className={styles.postContent}>
+        {result.map((item) => (
+          <div className={styles.textContainer} key={item.slug}>
+            <h1 className={styles.h1 +  ' ' + 'mt-3'}>{item.title}</h1>
+            <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+          
+            <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
+            <button onClick={otherRandomMandala} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+            {/* make one to go to the rooth */}
+            <button onClick={() => router.push('/')} className='btn btn-light mt-3 me-3'>Home</button>
+          </div>
+        ))      
+        }
+        
+      </div>
     </div>
   )
 }
