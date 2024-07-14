@@ -72,7 +72,7 @@ const Page = ({ params : { slug } }) => {
             <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
           
             <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
-            <button onClick={otherRandomPost} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+            <button onClick={otherRandomPost} className='btn btn-light mt-3 me-3'>Otro Mixtape</button>
             {/* make one to go to the rooth */}
             <button onClick={() => router.push('/')} className='btn btn-light mt-3 me-3'>Home</button>
           </div>
