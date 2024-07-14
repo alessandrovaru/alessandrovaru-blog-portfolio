@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 
 import DOMPurify from 'dompurify';
 
-
+import styles from './styles.module.css'
 
 import LoadingMandala from '@/components/LoadingMandala';
 
@@ -13,7 +13,7 @@ import PostImagesSlider from '@/components/PostImagesSlider'
 
 import { useRouter } from 'next/navigation'
 
-import './styles.css'
+
 
 
 const Page = ({ params : { slug } }) => {
@@ -60,17 +60,26 @@ const Page = ({ params : { slug } }) => {
   }
 
   return (
-    <div className='mixtapes-container container'>
-      <PostImagesSlider storageResult={storageResult} result={result} storage={'mixtapes-de-caracas'} />
-      {result.map((item) => (
-        <div className='mixtapes-wrapper' key={item.slug}>
-          <h1 className='mixtapes-title mt-3'>{item.title}</h1>
-          <p className='mixtapes-content mt-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
-        </div>
-      ))      
-      }
-      <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
-      <button onClick={otherRandomPost} className='btn btn-light mt-3 me-3'>Otro Mixtape</button>
+    <div className={styles.container}>
+      <div className={styles.postImageSlider}>
+        <PostImagesSlider storageResult={storageResult} result={result} storage={'mixtapes-de-caracas'}/>
+      </div>
+
+      <div className={styles.postContent}>
+        {result.map((item) => (
+          <div className={styles.textContainer} key={item.slug}>
+            <h1 className={styles.h1 +  ' ' + 'mt-3'}>{item.title}</h1>
+            <p className={styles.p +  ' ' + 'mt-3'} dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }} />
+          
+            <button onClick={() => window.history.back()} className='btn btn-light mt-3 me-3'>Volver</button>
+            <button onClick={otherRandomPost} className='btn btn-light mt-3 me-3'>Otro mandala</button>
+            {/* make one to go to the rooth */}
+            <button onClick={() => router.push('/')} className='btn btn-light mt-3 me-3'>Home</button>
+          </div>
+        ))      
+        }
+        
+      </div>
     </div>
   )
 }

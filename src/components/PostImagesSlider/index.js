@@ -28,7 +28,7 @@ const PostImagesSlider = (props) => {
     <Swiper
       className={'mySwiper'}
       modules={[Navigation, Pagination]}
-      spaceBetween={30}
+      spaceBetween={0}
       slidesPerView={1}
       pagination={{ clickable: true }}
       style={{

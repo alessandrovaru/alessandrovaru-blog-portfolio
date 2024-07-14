@@ -3,17 +3,12 @@ import {useEffect, useState} from 'react'
 
 import DOMPurify from 'dompurify';
 
-
 import  listData  from '@/firebase/firestore/listData'
 import  listStorageData  from '@/firebase/storage/listStorageData'
 import PostImagesSlider from '@/components/PostImagesSlider'
-
 import Loading from '@/components/LoadingMandala';
 import { useRouter } from 'next/navigation'
-
 import styles from './styles.module.css'
-
-
 
 const Page = ({ params : { slug } }) => {
   const [result, setResult] = useState([]);
@@ -60,7 +55,7 @@ const Page = ({ params : { slug } }) => {
 
 
   return (
-    <div className={styles.mandalaContainer}>
+    <div className={styles.container}>
       <div className={styles.postImageSlider}>
         <PostImagesSlider storageResult={storageResult} result={result} storage={'mandalas'}/>
       </div>
