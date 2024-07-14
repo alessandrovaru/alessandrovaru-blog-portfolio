@@ -41,7 +41,7 @@
 
 /* create mobile */
 @media (max-width: 900px){
-  .mandalaContainer{
+  .container{
     grid-template-areas:
     "postImageSlider"
     "postContent";
