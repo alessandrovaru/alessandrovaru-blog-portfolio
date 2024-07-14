@@ -22,12 +22,15 @@ const microgramma = localFont({
 
 
 export const metadata = {
-  title: "Alessandrovaru",
-  description: "Alessandro Varuzza personal website",
+  metadataBase: new URL('https://alessandrovaru.com/'),
+  title: {
+    default: 'Alessandrovaru',
+    template: '%s | Alessandrovaru',
+  },
   generator: "Next.js",
   applicationName: "alessandrovaru-blog-portfolio",
   referrer: 'origin-when-cross-origin',
-  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías'],
+  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías', 'Jung'],
   creator: 'Alessandro Varuzza',
   publisher: 'Alessandro Varuzza',
   formatDetection: ['telephone=no', 'email=no', 'address=no'],
@@ -39,7 +42,10 @@ export const metadata = {
     }
   },
   openGraph: {
-    images: '/public/mandala.ico',
+    description: "En la belleza del caos",
+    images: '/public/p8.jpg',
+    locale: 'es-VE',
+    type: 'website',
   }
 };
 

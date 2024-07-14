@@ -16,7 +16,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color:rgb(233, 233, 233) !important;
+  background-color:#e9e9e9 !important;
   /* background-image:
   radial-gradient(at 0% 0%, hsla(0, 0%, 71%, 0.671) 0px, transparent 50%),
   radial-gradient(at 92% 86%, rgb(182, 182, 182) 0px, transparent 50%); */
