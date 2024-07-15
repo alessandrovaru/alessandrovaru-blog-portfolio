@@ -18,7 +18,13 @@
     background-color: transparent;
     transition: all 0.3s ease-in-out;
     background: rgb(0,0,0);
-background: radial-gradient(circle, rgba(0, 0, 0, 0.534) 0%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.534) 0%, rgba(0,0,0,0) 100%);
+    & .logoSlider{
+      width: 200px !important;
+      height: 100px !important;
+      object-fit: contain;
+      position: relative !important;
+    }
   } 
   & .home-slider-text:hover{
   } 
@@ -30,9 +36,7 @@ background: radial-gradient(circle, rgba(0, 0, 0, 0.534) 0%, rgba(0,0,0,0) 100%)
     font-size: 1rem;
     margin-bottom: 0;
   }
-  & .logoSlider{
-    width: 200px;
-  }
+  
   & .logoMandalas{
     width: 120px;
     animation: rotate 33s linear infinite;

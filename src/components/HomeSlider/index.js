@@ -18,6 +18,7 @@ import logoMixtapes from "/public/images/logos/mixtape.png";
 import logoMandalas from "/public/images/logos/mandalawhite.png";
 import logoFantasias from "/public/images/logos/fantasias.png";
 import Link from 'next/link';
+import Image from 'next/image';
 
 const HomeSlider = () => {
   const slides = [
@@ -69,14 +70,13 @@ const HomeSlider = () => {
           "--swiper-pagination-bullet-inactive-opacity": "1",
           "--swiper-pagination-bullet-size": "16px",
           "--swiper-pagination-bullet-horizontal-gap": "6px"
-        }} sin poder dejar de 
-      > 
+        }}> 
         {slides.map((slide, index) => (
           <SwiperSlide key={index} >
             <div className="homeSlide">
               <div className="home-slider-image" style={{ backgroundImage: `url(${slide.image})`}}>
                 <div className="home-slider-text">
-                  <img className={'mb-3 img-fluid logoSlider' + ' ' + slide.logo_class} src={slide.logo} alt={slide.logo_alt} />
+                  <Image className={'mb-3 img-fluid logoSlider' + ' ' + slide.logo_class} src={slide.logo} alt={slide.logo_alt} fill />
                   <h1 className='mb-3'>{slide.title}</h1>
                   <p className='mb-3'>{slide.description}</p>
                   {/* Create a transparent button that change on hover */}
