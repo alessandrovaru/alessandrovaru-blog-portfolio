@@ -61,7 +61,7 @@ const MixtapesLanding = (props) => {
               {props.pagesList.map((page, index) => {
                 return (
                   <span key={index}>
-                    <Link className="postLink" href="{page.url}">{page.title}</Link>
+                    <Link className="postLink" href={page.url}>{page.title}</Link>
                   </span>
                 );
 
