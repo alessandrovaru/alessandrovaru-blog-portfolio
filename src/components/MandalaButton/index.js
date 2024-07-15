@@ -8,6 +8,7 @@ import background from "/public/images/p1.jpg";
 import "./styles.css";
 import Image from "next/image";
 import Link from "next/link";
+import DOMPurify from 'dompurify';
 
 
 const MandalaButton = (props) => {
@@ -58,13 +59,7 @@ const MandalaButton = (props) => {
   };
 
   const html = `
-    ${props.pagesList.map((page, index) => {
-      return `
-        <span key=${index}>
-          <Link href="${page.url}">${page.title}</Link>
-        </span>
-      `
-    }).join('')}
+    
 `
 
   return (
@@ -95,7 +90,16 @@ const MandalaButton = (props) => {
               {/* add a small text before the h1 saying "serie fotografica" */}
               <p className="small-title">Serie Fotográfica</p>
               <h1>Mandalas</h1>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <div>
+                {props.pagesList.map((page, index) => {
+                  return (
+                    <span key={index}>
+                      <Link className="postLink" href="{page.url}">{page.title}</Link>
+                    </span>
+                  );
+
+                })}
+                </div>
                 <p className="instructions">Puedes hacer click en el mandala y serás redirigido a un link aleatorio relacionado al trabajo de Carl Gustav Jung o una canción aleatoria.</p>
                 <Link href='/' className='btn btn-light mt-3 me-3'>Home</Link>
             </div>

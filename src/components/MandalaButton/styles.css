@@ -86,6 +86,11 @@
 }
 
 
+.postLink{
+  font-family: var(--microgramma-font) !important;
+  text-transform: uppercase;
+}
+
 
 /* add media query for mobile */
 

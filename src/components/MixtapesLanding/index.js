@@ -31,17 +31,6 @@ const MixtapesLanding = (props) => {
   //   max: 30
   // };
 
-
-  const html = `
-    ${props.pagesList.map((page, index) => {
-      return `
-        <span key=${index}>
-          <a href="${page.url}">${page.title}</a>
-        </span>
-      `
-    }).join('')}
-`
-
   return (
     <section
       className="mixtapes-container"
@@ -68,7 +57,16 @@ const MixtapesLanding = (props) => {
             {/* add a small text before the h1 saying "serie fotografica" */}
             <p className="small-title">Serie Fotográfica</p>
             <h1>MIXTAPES DE CARACAS</h1>
-              <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div>
+              {props.pagesList.map((page, index) => {
+                return (
+                  <span key={index}>
+                    <Link className="postLink" href="{page.url}">{page.title}</Link>
+                  </span>
+                );
+
+              })}
+              </div>
               <p className="instructions">Mixtapes de Caracas es un proyecto en el que fotografía, diseño, video y textos expresan mi visión de la belleza en el caos de mi ciudad amada.</p>
               <p className="instructions">En los primeros volúmenes, las historias son cortas o inexistentes y es debido a que este es un proyecto en constante evolución y en un principio no tenía pensando escribir una historia para cada volumen, se trataba unicamente de los captions de estos posts en Instagram.</p>
               {/* Create a smaller fontsize p */}
