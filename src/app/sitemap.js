@@ -18,6 +18,10 @@ export default async function sitemap() {
       url: `${baseUrl}/mandalas`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/fantasias`,
+      lastModified: new Date(),
+    },
     // MIXTAPES
     ...mixtapes.map((mixtape) => {
       return {
