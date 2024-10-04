@@ -1,45 +1,29 @@
 import NavigationBar from '@/components/Nav'
-import Head from 'next/head'
 import Image from 'next/image'
+
+export const metadata = {
+  title: "Plantilla Definitiva para la Gestión de Gimnasios de Latinoamerica",
+  description: "Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar. Perfecta para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más.",
+  generator: "Next.js",
+  applicationName: "alessandrovaru-blog-portfolio",
+  referrer: 'origin-when-cross-origin',
+  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías', 'Baraka', 'Documental Contemplativo', 'Documental', 'Ron Fricke', 'surrealism'],
+  creator: 'Alessandro Varuzza',
+  publisher: 'Alessandro Varuzza',
+  formatDetection: ['telephone=no', 'email=no', 'address=no'],
+  metadataBase: new URL('https://alessandrovaru.com/gimnasios'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'es-VE': '/es',
+    }
+  },
+};
 
 export default function TemplateLanding() {
 
   return (
     <>
-      <Head>
-        {/* Título de la Página */}
-        <title>Plantilla Definitiva para la Gestión de Gimnasios en Latinoamérica</title>
-        
-        {/* Meta Descripción */}
-        <meta 
-          name="description" 
-          content="Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar. Perfecta para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más." 
-        />
-        
-        {/* Meta Charset */}
-        <meta charSet="UTF-8" />
-        
-        {/* Meta Viewport para Responsividad */}
-        <meta 
-          name="viewport" 
-          content="width=device-width, initial-scale=1.0" 
-        />
-        
-        {/* Open Graph Meta Tags para Redes Sociales */}
-        <meta property="og:title" content="Plantilla Definitiva para la Gestión de Gimnasios en Latinoamérica" />
-        <meta property="og:description" content="Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar. Perfecta para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://alessandrovaru.com" />
-        <meta property="og:image" content="https://alessandrovaru.com/images/logoName.png" />
-        
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Plantilla Definitiva para la Gestión de Gimnasios en Latinoamérica" />
-        <meta name="twitter:description" content="Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar. Perfecta para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más." />
-        <meta name="twitter:image" content="https://tu-dominio.com/images/logoName.png" />
-        
-
-      </Head>
     <div className="d-flex flex-column min-vh-100 bg-dark text-white">
       <NavigationBar />
       <main className="flex-grow-1">
