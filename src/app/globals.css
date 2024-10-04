@@ -26,7 +26,24 @@ body h1, h2, h3, h4, h5, h6{
   font-family: var(--microgramma-font);
   text-transform: uppercase;
 }
-
+body h1{
+  font-size:  clamp(1.5rem, 2.5vw, 2.5rem) !important;
+}
+body h2{
+  font-size:  clamp(1.3rem, 2.3vw, 2.3rem) !important;
+}
+body h3{
+  font-size:  clamp(1.1rem, 2.1vw, 2.1rem) !important;
+}
+body h4{
+  font-size:  clamp(0.9rem, 1.9vw, 1.9rem) !important;
+}
+body h5{
+  font-size:  clamp(0.7rem, 1.7vw, 1.7rem) !important;
+}
+body h6{
+  font-size:  clamp(0.5rem, 1.5vw, 1.5rem) !important;
+}
 body p, ul, li, a{
   font-family: var(--questrial-font) !important;
   color: white;
