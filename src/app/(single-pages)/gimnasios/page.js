@@ -31,7 +31,7 @@ export default function TemplateLanding() {
         <section className="py-5 py-md-7 bg-dark text-white min-vh-100 d-flex flex-column justify-content-center">
           <div className="container">
             <div className="text-center">
-              <h1 className="display-4 fw-bold mb-3 display">Plantilla Definitiva para la Gestión de Gimnasios de Latinoamerica</h1>
+              <h1 className="display-4 fw-bold mb-3 display">Plantilla Definitiva para la Gestión de Gimnasios de Latinoamérica</h1>
               <p className="lead mb-4">
                 Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar.
                 Perfecta para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más.
