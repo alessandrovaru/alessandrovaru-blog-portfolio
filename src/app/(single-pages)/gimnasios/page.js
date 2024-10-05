@@ -1,5 +1,6 @@
 import NavigationBar from '@/components/Nav'
 import Image from 'next/image'
+import styles from './styles.module.css'
 
 export const metadata = {
   title: "Plantilla Definitiva para la Gestión de Gimnasios de Latinoamérica",
@@ -28,7 +29,7 @@ export default function TemplateLanding() {
       <NavigationBar />
       <main className="flex-grow-1">
         {/* Sección Principal */}
-        <section className="py-5 py-md-7 bg-dark text-white min-vh-100 d-flex flex-column justify-content-center">
+        <section className={`${styles.hero} py-5 py-md-7 bg-dark text-white min-vh-100 d-flex flex-column justify-content-center`}>
           <div className="container">
             <div className="text-center">
               <h1 className="display-4 fw-bold mb-3 display">Plantilla Definitiva para la Gestión de Gimnasios de Latinoamérica</h1>
@@ -45,7 +46,7 @@ export default function TemplateLanding() {
         </section>
 
         {/* Sección de Características */}
-        <section id="features" className="py-5 bg-secondary">
+        <section id="features" className={`${styles.features} py-5 bg-secondary`}>
           <div className="container">
             <h2 className="text-center mb-5">Características de la Plantilla</h2>
             <div className="row g-4">
@@ -108,7 +109,7 @@ export default function TemplateLanding() {
         </section>
 
         {/* Sección Demostración */}
-        <section id="demo" className="py-5">
+        <section id="demo" className={`${styles.demo} py-5`}>
           <div className="container">
             <h2 className="text-center mb-5">Míralo en Acción</h2>
             <div className="ratio ratio-16x9 mb-4">
@@ -143,7 +144,7 @@ export default function TemplateLanding() {
         </section>
 
         {/* Sección Precios */}
-        <section id="pricing" className="py-5 bg-dark">
+        <section id="pricing" className={`${styles.pricing} py-5 bg-dark`}>
           <div className="container">
             <h2 className="text-center mb-5">Precios Simples y Transparentes</h2>
             <div className="row g-4 justify-content-center">
@@ -222,7 +223,7 @@ export default function TemplateLanding() {
         </section>
 
         {/* Sección Llamada a la Acción */}
-        <section className="py-5 bg-danger text-white">
+        <section className={`${styles.cta} py-5 bg-danger text-white`}>
           <div className="container">
             <div className="text-center">
               <h2 className="mb-3">¿Listo para Transformar Tu Gimnasio?</h2>
