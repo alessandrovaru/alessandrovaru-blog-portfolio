@@ -153,22 +153,66 @@ export default function TemplateLanding() {
           </div>
         </section>
 
+        {/* Sección de con h2 y p a la izquierda y un video vertical a la derecha */}
+
+        <section className={`py-5 bg-light bg-gradient text-dark`}>
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-md-6">
+                <h2 className="text-left text-dark mb-4">Que tus usuarios gestionen su horario de clases</h2>
+                <p className="lead text-left text-secondary">
+                  Tus miembros podrán ver y reservar clases, así como recibir notificaciones push para mantenerlos comprometidos.
+                </p>
+                <h2 className="text-left text-dark mb-4">Reserva de clases en línea</h2>
+                <p className="lead text-left text-secondary">
+                  Tus miembros podrán reservar clases en línea y recibir notificaciones push para mantenerlos comprometidos.
+                </p>
+              </div>
+              <div className="col-md-6">
+                <div className={` ${styles.demo} ratio ratio-1x1 mb-4`}>
+                  <video
+                    width="320"
+                    height="240"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source
+                      src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fdemo-horario.mp4?alt=media&token=b2f42e47-2b22-495d-a9ba-4f84a0cef892"
+                      type="video/mp4"
+                    />
+                    <track
+                      src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fdemo-horario.mp4?alt=media&token=b2f42e47-2b22-495d-a9ba-4f84a0cef892"
+                      kind="subtitles"
+                      srcLang="es"
+                      label="Español"
+                    />
+                    Tu navegador no soporta el elemento de video.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         {/* Sección de Onboarding Profesional */}
-<section id="onboarding" className={`py-5 bg-secondary bg-gradient text-white`}>
-  <div className="container">
-    <h2 className="text-center mb-4">Onboarding Profesional</h2>
-    <div className="row justify-content-center">
-      <div className="col-md-8">
-        <p className="lead text-center">
-          Nuestro equipo de técnicos especializados se encargará de montar y configurar la plantilla para tu gimnasio, asegurando una implementación rápida y sin contratiempos. Nos ocupamos de todo para que puedas enfocarte en lo que mejor sabes hacer: gestionar tu gimnasio.
-        </p>
-        <p className="text-center small">
-          *Nota: La compra del dominio no está incluida, pero sí la configuración completa de la plantilla.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+        <section id="onboarding" className={`py-5 bg-secondary bg-gradient text-white`}>
+          <div className="container">
+            <h2 className="text-center mb-4">Onboarding Profesional</h2>
+            <div className="row justify-content-center">
+              <div className="col-md-8">
+                <p className="lead text-center">
+                  Nuestro equipo de técnicos especializados se encargará de montar y configurar la plantilla para tu gimnasio, asegurando una implementación rápida y sin contratiempos. Nos ocupamos de todo para que puedas enfocarte en lo que mejor sabes hacer: gestionar tu gimnasio.
+                </p>
+                <p className="text-center small">
+                  *Nota: La compra del dominio no está incluida, pero sí la configuración completa de la plantilla.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Sección Precios */}
         <section id="pricing" className={`py-5 bg-light bg-gradient`}>
