@@ -2,7 +2,7 @@ import NavigationBar from '@/components/Nav'
 import styles from './styles.module.css'
 
 export const metadata = {
-  title: "Plantilla Definitiva para la Gestión de Gimnasios en Latinoamérica",
+  title: "Aplicación web definitiva para la gestión de gimnasios en Latinoamérica",
   description: "Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar. Ideal para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más.",
   generator: "Next.js",
   applicationName: "Gestión de Gimnasios",
