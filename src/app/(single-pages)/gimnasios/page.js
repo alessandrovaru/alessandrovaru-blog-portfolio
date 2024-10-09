@@ -46,7 +46,7 @@ export default function TemplateLanding() {
             <div className="text-center">
               <h1 className="display-4 fw-bold mb-3">La Solución Definitiva para la Gestión de tu Gimnasio</h1>
               <p className="lead mb-4">
-                Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra plantilla avanzada, construida con Next.js 14 y Google Firebase. <u>Personalizable, económica y fácil de usar.</u>
+                Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación web, construida con Next.js 14 y Google Firebase. <u>Personalizable, económica y fácil de usar.</u>
               </p>
               <div>
                 <a href='#features' className="btn btn-dark btn-lg me-2 mb-3" style={{fontSize: 'clamp(0.5rem, 5vw, 1rem)'}}>Descubre Más</a>
