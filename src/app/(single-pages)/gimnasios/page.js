@@ -40,8 +40,8 @@ export default function TemplateLanding() {
                 Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra plantilla avanzada, construida con Next.js 14 y Google Firebase. <u>Personalizable, económica y fácil de usar.</u>
               </p>
               <div>
-                <a href='#features' className="btn btn-dark btn-lg me-2">Descubre Más</a>
-                <a href='#demo' className="btn btn-outline-light btn-lg">Ver Demostración</a>
+                <a href='#features' className="btn btn-dark btn-lg me-2 mb-3" style={{fontSize: 'clamp(0.5rem, 5vw, 1rem)'}}>Descubre Más</a>
+                <a href='#demo' className="btn btn-outline-light btn-lg mb-3" style={{fontSize: 'clamp(0.5rem, 5vw, 1rem)'}}>Ver Demostración</a>
               </div>
             </div>
           </div>
@@ -196,8 +196,8 @@ export default function TemplateLanding() {
                 <div key={index} className="col-md-4">
                   <div className={` ${styles.pricing} card h-100 ${plan.highlight ? 'border-danger' : 'border-secondary'}`}>
                     <div className="card-body">
-                      <h3 className="card-title text-center">{plan.title}</h3>
-                      <h5 className="display-6 text-center text-dark mb-2">{plan.price}</h5>
+                      <h2 className="card-title text-center">{plan.title}</h2>
+                      <p className="display-6 text-center text-dark mb-2">{plan.price}</p>
                       <p className="text-muted text-center mb-4">{plan.description}</p>
                       <ul className="list-unstyled mb-4">
                         {plan.features.map((feature, featureIndex) => (
