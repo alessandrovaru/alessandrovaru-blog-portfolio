@@ -144,6 +144,23 @@ export default function TemplateLanding() {
           </div>
         </section>
 
+        {/* Sección de Onboarding Profesional */}
+<section id="onboarding" className={`py-5 bg-secondary bg-gradient text-white`}>
+  <div className="container">
+    <h2 className="text-center mb-4">Onboarding Profesional</h2>
+    <div className="row justify-content-center">
+      <div className="col-md-8">
+        <p className="lead text-center">
+          Nuestro equipo de técnicos especializados se encargará de montar y configurar la plantilla para tu gimnasio, asegurando una implementación rápida y sin contratiempos. Nos ocupamos de todo para que puedas enfocarte en lo que mejor sabes hacer: gestionar tu gimnasio.
+        </p>
+        <p className="text-center small">
+          *Nota: La compra del dominio no está incluida, pero sí la configuración completa de la plantilla.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
         {/* Sección Precios */}
         <section id="pricing" className={`py-5 bg-light bg-gradient`}>
           <div className="container">
@@ -221,6 +238,8 @@ export default function TemplateLanding() {
             </div>
           </div>
         </section>
+
+        
 
         {/* Sección Llamada a la Acción */}
         <section className={`${styles.cta} py-5 bg-danger bg-gradient text-white`}>
