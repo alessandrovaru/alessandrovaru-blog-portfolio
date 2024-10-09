@@ -43,7 +43,7 @@ export const metadata = {
     }
   },
   openGraph: {
-    description: "En la belleza del caos",
+    description: "Desarrollador de Software, Fotógrafo y Artista Marcial.",
     images: '/public/p8.jpg',
     locale: 'es-VE',
     type: 'website',

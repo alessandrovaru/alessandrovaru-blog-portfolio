@@ -22,6 +22,11 @@ export const metadata = {
       'es-VE': '/es',
     }
   },
+  openGraph: {
+    description: "Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra plantilla avanzada, construida con Next.js 14 y Google Firebase.",
+    locale: 'es-VE',
+    type: 'website',
+  }
 };
 
 export default function TemplateLanding() {
