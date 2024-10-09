@@ -2,10 +2,13 @@ import NavigationBar from '@/components/Nav'
 import styles from './styles.module.css'
 
 export const metadata = {
-  title: "Aplicación web definitiva para la gestión de gimnasios en Latinoamérica",
-  description: "Impulsa tu gimnasio con nuestra plantilla completa, personalizable y fácil de usar. Ideal para gimnasios de Entrenamiento Funcional, Artes Marciales, Crossfit, spinning y más.",
+  metadataBase: new URL('https://alessandrovaru.com/'),
+  title: {
+    default: 'Aplicación web definitiva para la gestión de gimnasios en Latinoamérica',
+    template: '%s | Alessandrovaru',
+  },
   generator: "Next.js",
-  applicationName: "Gestión de Gimnasios",
+  applicationName: "alessandrovaru-blog-portfolio",
   referrer: 'origin-when-cross-origin',
   keywords: [
     'Gestión de Gimnasios', 'Plantilla Gimnasio', 'Next.js 14', 'Firebase', 
@@ -15,15 +18,16 @@ export const metadata = {
   creator: 'Alessandro Varuzza',
   publisher: 'Alessandro Varuzza',
   formatDetection: ['telephone=no', 'email=no', 'address=no'],
-  metadataBase: new URL('https://www.alessandrovaru.com/gimnasios'),
+  metadataBase: new URL('https://alessandrovaru.com/'),
   alternates: {
-    canonical: '/gimnasios',
+    canonical: '/',
     languages: {
       'es-VE': '/es',
     }
   },
   openGraph: {
-    description: "Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra plantilla avanzada, construida con Next.js 14 y Google Firebase.",
+    description: "Desarrollador de Software, Fotógrafo y Artista Marcial.",
+    images: '/public/p8.jpg',
     locale: 'es-VE',
     type: 'website',
   }
