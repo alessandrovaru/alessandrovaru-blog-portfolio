@@ -2,36 +2,23 @@ import NavigationBar from '@/components/Nav'
 import styles from './styles.module.css'
 
 export const metadata = {
-  metadataBase: new URL('https://alessandrovaru.com/'),
-  title: {
-    default: 'Aplicación web definitiva para la gestión de gimnasios en Latinoamérica',
-    template: '%s | Alessandrovaru',
-  },
-  generator: "Next.js",
-  applicationName: "alessandrovaru-blog-portfolio",
-  referrer: 'origin-when-cross-origin',
-  keywords: [
-    'Gestión de Gimnasios', 'Plantilla Gimnasio', 'Next.js 14', 'Firebase', 
-    'Administración de Gimnasios', 'Software de Fitness', 'Plataforma de Gimnasios', 
-    'Reservas de Clases', 'Pago de Suscripciones', 'Análisis de Datos Fitness'
-  ],
-  creator: 'Alessandro Varuzza',
-  publisher: 'Alessandro Varuzza',
-  formatDetection: ['telephone=no', 'email=no', 'address=no'],
-  metadataBase: new URL('https://alessandrovaru.com/'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'es-VE': '/es',
-    }
-  },
+  title: 'Aplicación web definitiva para la gestión de gimnasios en Latinoamérica',
+  description: 'Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
   openGraph: {
-    description: "Desarrollador de Software, Fotógrafo y Artista Marcial.",
-    images: '/public/p8.jpg',
-    locale: 'es-VE',
-    type: 'website',
-  }
-};
+    title: 'Aplicación web definitiva para la gestión de gimnasios en Latinoamérica',
+    description: 'Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
+    url: 'https://www.alessandrovaru.com/gimnasios',
+    siteName: 'Alessandrovaru',
+    images: [
+      {
+        url: 'images/metadata/gym.jpg',
+        width: 1366,
+        height: 768
+      },
+    ],
+    locale: 'es_ES',
+  },
+}
 
 export default function TemplateLanding() {
 
@@ -42,7 +29,7 @@ export default function TemplateLanding() {
       <main className="flex-grow-1">
         {/* Sección Principal */}
         <section className={`${styles.hero} py-5 py-md-7 bg-danger bg-gradient text-white min-vh-100 d-flex flex-column justify-content-center`}>
-          <div className="container">
+          <div className="container position-relative z-1">
             <div className="text-center">
               <h1 className="display-4 fw-bold mb-3">La Solución Definitiva para la Gestión de tu Gimnasio</h1>
               <p className="lead mb-4">
@@ -54,10 +41,33 @@ export default function TemplateLanding() {
               </div>
             </div>
           </div>
+          <div className={` ${styles.demo} ratio ratio-16x9 mb-4 position-absolute z-0 opacity-50`}>
+            <video
+              width="320"
+              height="240"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fhero.mp4?alt=media&token=19ad0565-2798-4575-b83d-bfa71da2d5bb"
+                type="video/mp4"
+              />
+              <track
+                src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fhero.mp4?alt=media&token=19ad0565-2798-4575-b83d-bfa71da2d5bb"
+                kind="subtitles"
+                srcLang="es"
+                label="Español"
+              />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
         </section>
+        
 
         {/* Sección de Características */}
-        <section id="features" className={`py-5 bg-dark bg-gradient`}>
+        <section id="features" className={`position-relative z-2 py-5 bg-dark bg-gradient`}>
           <div className="container">
             <h2 className="text-center mb-5">Características Principales</h2>
             <div className="row g-4">
