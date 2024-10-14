@@ -1,9 +1,10 @@
 import Footer from "@/components/Footer";
-import Nav from "@/components/Nav";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Analytics } from '@vercel/analytics/react';
+
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 import localFont from "next/font/local";
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <Analytics />
+          <SpeedInsights />
       </body>
     </html>
   );
