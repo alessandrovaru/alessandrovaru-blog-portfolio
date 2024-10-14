@@ -28,7 +28,7 @@ export default function TemplateLanding() {
       <NavigationBar />
       <main className="flex-grow-1">
         {/* Sección Principal */}
-        <section className={`${styles.hero} py-5 py-md-7 bg-danger bg-gradient text-white min-vh-100 d-flex flex-column justify-content-center`}>
+        <section className={`${styles.hero} py-5 py-md-7 bg-gradient text-white min-vh-100 d-flex flex-column justify-content-center`}>
           <div className="container position-relative z-1">
             <div className="text-center">
               <h1 className="display-4 fw-bold mb-3">La Solución Definitiva para la Gestión de tu Gimnasio</h1>
@@ -41,10 +41,9 @@ export default function TemplateLanding() {
               </div>
             </div>
           </div>
-          <div className={` ${styles.demo} ratio ratio-16x9 mb-4 position-absolute z-0 opacity-50`}>
+          <div className={` ${styles.demo} ${styles.responsive_video_container} ratio ratio-16x9  position-absolute z-0 opacity-25 responsive-video-container`}>
             <video
-              width="320"
-              height="240"
+              className={`${styles.responsive_video}`}
               autoPlay
               muted
               loop
@@ -67,56 +66,56 @@ export default function TemplateLanding() {
         
 
         {/* Sección de Características */}
-        <section id="features" className={`position-relative z-2 py-5 bg-dark bg-gradient`}>
+        <section id="features" className={`position-relative z-2 py-5 bg-light bg-gradient`}>
           <div className="container">
-            <h2 className="text-center mb-5">Características Principales</h2>
+            <h2 className="text-center text-dark mb-5">Características Principales</h2>
             <div className="row g-4">
               {[
                 {
                   title: "Gestión de Miembros",
                   description: "Administra fácilmente los datos de tus miembros, suscripciones y asistencia con una interfaz intuitiva.",
                   icon: (
-                    <i className="fas fa-users text-dark mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <i className="fas fa-users text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
                   ),
                 },
                 {
                   title: "Plataforma de Pagos",
                   description: "Facilita el pago de suscripciones y clases mediante múltiples métodos de pago seguros y confiables.",
                   icon: (
-                    <i className="fas fa-credit-card text-dark mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <i className="fas fa-credit-card text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
                   ),
                 },
                 {
                   title: "Personalizable",
                   description: "Adapta colores, contenidos y funcionalidades para que reflejen la identidad única de tu gimnasio.",
                   icon: (
-                    <i className="fas fa-paint-brush text-dark mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <i className="fas fa-paint-brush text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
                   ),
                 },
                 {
                   title: "Reservas y Notificaciones Push",
                   description: "Permite a tus miembros reservar clases en línea y recibir notificaciones push para mantenerlos comprometidos.",
                   icon: (
-                    <i className="fas fa-bell text-dark mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <i className="fas fa-bell text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
                   ),
                 },
                 {
                   title: "Panel de Análisis de Datos",
                   description: "Accede a informes detallados sobre membresías, clases y pagos para tomar decisiones informadas.",
                   icon: (
-                    <i className="fas fa-chart-line text-dark mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <i className="fas fa-chart-line text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
                   ),
                 },
                 {
                   title: "Soporte Técnico",
                   description: "Recibe asistencia dedicada para la configuración, personalización y mantenimiento de tu plantilla.",
                   icon: (
-                    <i className="fas fa-headset text-dark mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <i className="fas fa-headset text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
                   ),
                 },
               ].map((feature, index) => (
                 <div key={index} className="col-md-4">
-                  <div className={`${styles.features} card h-100 bg-danger bg-gradient text-white border-0`}>
+                  <div className={`${styles.features} card h-100 bg-dark bg-gradient text-white border-0`}>
                     <div className="card-body text-center">
                       {feature.icon}
                       <p className="text-white card-title" style={{ fontWeight: 'bold'}}>{feature.title}</p>
@@ -156,7 +155,7 @@ export default function TemplateLanding() {
               </video>
             </div>
             <div className="text-center">
-              <a href="#pricing" className="btn btn-danger btn-lg">
+              <a href="#pricing" className={` btn btn-dark text-white btn-lg`}>
                 ¡Empieza Ahora!
               </a>
             </div>
@@ -208,7 +207,7 @@ export default function TemplateLanding() {
 
 
         {/* Sección de Onboarding Profesional */}
-        <section id="onboarding" className={`py-5 bg-secondary bg-gradient text-white`}>
+        <section id="onboarding" className={`py-5 bg-dark bg-gradient text-white`}>
           <div className="container">
             <h2 className="text-center mb-4">Onboarding Profesional</h2>
             <div className="row justify-content-center">
@@ -274,7 +273,7 @@ export default function TemplateLanding() {
                 },
               ].map((plan, index) => (
                 <div key={index} className="col-md-4">
-                  <div className={` ${styles.pricing} card h-100 ${plan.highlight ? 'border-danger' : 'border-secondary'}`}>
+                  <div className={` ${styles.pricing} card h-100 ${plan.highlight ? 'border-dark' : 'border-secondary'}`}>
                     <div className="card-body">
                       <h2 className="card-title text-center">{plan.title}</h2>
                       <p className="display-6 text-center text-dark mb-2">{plan.price}</p>
@@ -290,7 +289,7 @@ export default function TemplateLanding() {
                         ))}
                       </ul>
                       <div className="text-center">
-                        <a href='https://tally.so/r/wk7aPM' target='_blank' className={`btn ${plan.highlight ? 'btn-danger' : 'btn-outline-danger'} w-100`}>
+                        <a href='https://tally.so/r/wk7aPM' target='_blank' className={`btn ${plan.highlight ? 'btn-dark' : 'btn-outline-dark'} w-100`}>
                           {plan.cta}
                         </a>
                       </div>
@@ -305,7 +304,7 @@ export default function TemplateLanding() {
         
 
         {/* Sección Llamada a la Acción */}
-        <section className={`${styles.cta} py-5 bg-danger bg-gradient text-white`}>
+        <section className={`${styles.cta} py-5 text-white`}>
           <div className="container">
             <div className="text-center">
               <h2 className="mb-3">¡Transforma Tu Gimnasio Hoy!</h2>
