@@ -2,11 +2,11 @@ import NavigationBar from '@/components/Nav'
 import styles from './styles.module.css'
 
 export const metadata = {
-  title: 'Aplicación web definitiva para la gestión de gimnasios en Latinoamérica',
-  description: 'Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
+  title: 'Transforma tu web con esta aplicación para la gestión de gimnasios',
+  description: 'Optimiza la experiencia de tus usuarios y la administración de tu gimnasio con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
   openGraph: {
-    title: 'Aplicación web definitiva para la gestión de gimnasios en Latinoamérica',
-    description: 'Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
+    title: 'Transforma tu web con esta aplicación para la gestión de gimnasios',
+    description: 'Optimiza la experiencia de tus usuarios y la administración de tu gimnasio con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
     url: 'https://www.alessandrovaru.com/gimnasios',
     siteName: 'Alessandrovaru',
     images: [
@@ -31,9 +31,9 @@ export default function TemplateLanding() {
         <section className={`${styles.hero} py-5 py-md-7 bg-gradient text-white min-vh-100 d-flex flex-column justify-content-center`}>
           <div className="container position-relative z-1">
             <div className="text-center">
-              <h1 className="display-4 fw-bold mb-3">La Solución Definitiva para la Gestión de tu Gimnasio</h1>
+              <h1 className="display-4 fw-bold mb-3">La Solución Definitiva para tu web y la gestión de tu Gimnasio</h1>
               <p className="lead mb-4">
-                Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación web, construida con Next.js 14 y Google Firebase. <u>Personalizable, económica y fácil de usar.</u>
+                Optimiza la administración de tu gimnasio y la experiencia de tus usuarios con nuestra aplicación. Ten una web: <u>personalizable, económica y fácil de usar.</u>
               </p>
               <div>
                 <a href='#features' className="btn btn-dark btn-lg me-2 mb-3" style={{fontSize: 'clamp(0.5rem, 5vw, 1rem)'}}>Descubre Más</a>
