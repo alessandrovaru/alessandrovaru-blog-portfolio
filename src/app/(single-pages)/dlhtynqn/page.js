@@ -1,24 +1,36 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './styles.module.css'
 import HeroAnimation from './HeroAnimation'
 import ImagePopup from './ImagePopup'
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import Nav from '@/components/Nav'
 
 gsap.registerPlugin(ScrollToPlugin)
 
 export default function Page() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768) // Breakpoint for mobile
+    }
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   const handleScrollToTop = () => {
-    gsap.to(window, { duration: 1.5, scrollTo: 0, ease: 'power3.inOut' })
+    gsap.to(window, { duration: 0.5, scrollTo: 0, ease: 'power3.inOut' })
   }
 
   return (
-    <>
+    <div className={styles.page}>
+      <Nav />
       <HeroAnimation />
       <div className={styles.pageContainer}>
         <div className={styles.content}>
@@ -75,7 +87,7 @@ export default function Page() {
                 <div
                   key={i}
                   className={styles.galleryItem}
-                  onClick={() => setSelectedImage(src)}
+                  onClick={() => !isMobile && setSelectedImage(src)}
                 >
                   <Image
                     src={src}
@@ -99,6 +111,6 @@ export default function Page() {
           onClose={() => setSelectedImage(null)}
         />
       )}
-    </>
+    </div>
   )
 }

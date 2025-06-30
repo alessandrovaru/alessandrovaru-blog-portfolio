@@ -13,9 +13,19 @@
     left: 60%;
     transform: translate(-50%, -50%);
     background-color: black;
-    width: 160%;
+    width: 180%;
     height: 160%;
     object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .heroSection {
+        height:30vh;
+    }
+    .heroCanvas {
+        top: 70%;
+        left: 60%;
+    }
 }
 
 .heroSection h1 {
