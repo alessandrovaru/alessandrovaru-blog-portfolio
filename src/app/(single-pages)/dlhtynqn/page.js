@@ -8,12 +8,17 @@ import ImagePopup from './ImagePopup'
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import Nav from '@/components/Nav'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import listData from '@/firebase/firestore/listData'
 
 gsap.registerPlugin(ScrollToPlugin)
 
 export default function Page() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [mandalas, setMandalas] = useState([])
+  const router = useRouter()
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -21,11 +26,27 @@ export default function Page() {
     }
     checkIsMobile()
     window.addEventListener('resize', checkIsMobile)
+
+    const fetchMandalas = async () => {
+      const mandalaItems = await listData('mandalas')
+      setMandalas(mandalaItems)
+    }
+    fetchMandalas()
+
     return () => window.removeEventListener('resize', checkIsMobile)
   }, [])
 
   const handleScrollToTop = () => {
     gsap.to(window, { duration: 0.5, scrollTo: 0, ease: 'power3.inOut' })
+  }
+
+  const handleRandomMandala = () => {
+    if (mandalas.length > 0) {
+      const randomItem = mandalas[Math.floor(Math.random() * mandalas.length)]
+      if (randomItem && randomItem.slug) {
+        router.push(`/mandalas/${randomItem.slug}`)
+      }
+    }
   }
 
   return (
@@ -99,9 +120,26 @@ export default function Page() {
               )
             })}
           </div>
-          <button onClick={handleScrollToTop} className={styles.scrollToTopButton}>
-            Vuelve arriba por si te perdiste el efecto
-          </button>
+          <div className={styles.buttonContainer}>
+            <button
+              onClick={handleScrollToTop}
+              className={styles.actionButton}
+            >
+              Vuelve arriba
+            </button>
+            <Link
+              href="/mandalas"
+              className={styles.actionButton}
+            >
+              Mandalas
+            </Link>
+            <Link
+              href="/mixtapes-de-caracas"
+              className={styles.actionButton}
+            >
+              Mixtapes de Caracas
+            </Link>
+          </div>
         </div>
       </div>
 
