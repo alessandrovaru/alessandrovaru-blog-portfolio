@@ -5,9 +5,17 @@ import Image from 'next/image'
 import styles from './styles.module.css'
 import HeroAnimation from './HeroAnimation'
 import ImagePopup from './ImagePopup'
+import { gsap } from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
+gsap.registerPlugin(ScrollToPlugin)
 
 export default function Page() {
   const [selectedImage, setSelectedImage] = useState(null)
+
+  const handleScrollToTop = () => {
+    gsap.to(window, { duration: 1.5, scrollTo: 0, ease: 'power3.inOut' })
+  }
 
   return (
     <>
@@ -79,6 +87,9 @@ export default function Page() {
               )
             })}
           </div>
+          <button onClick={handleScrollToTop} className={styles.scrollToTopButton}>
+            Vuelve arriba por si te perdiste el efecto
+          </button>
         </div>
       </div>
 

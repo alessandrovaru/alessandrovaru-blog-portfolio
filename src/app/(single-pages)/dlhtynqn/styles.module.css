@@ -63,3 +63,23 @@
   border-radius: 8px;
   object-fit: cover;
 }
+
+.scrollToTopButton {
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1rem 2rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--microgramma-font);
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.scrollToTopButton:hover {
+  background-color: #005bb5;
+}

@@ -10,6 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import localFont from "next/font/local";
 import { AuthContextProvider } from "@/context/AuthContext";
 import Script from "next/script";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const questrial = localFont({ 
   src: "../../public/fonts/questrial.ttf",
@@ -67,10 +68,12 @@ export default function RootLayout({ children }) {
       <script async src="https://kit.fontawesome.com/0634a1d485.js" crossOrigin="anonymous"></script>
       </head>
       <body className={`${microgramma.className} ${questrial.variable}`}>
+        <SmoothScrolling>
           {children}
           <Footer />
           <Analytics />
           <SpeedInsights />
+        </SmoothScrolling>
       </body>
     </html>
   );
