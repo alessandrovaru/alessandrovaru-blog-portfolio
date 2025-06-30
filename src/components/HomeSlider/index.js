@@ -13,10 +13,11 @@ import 'swiper/css/scrollbar';
 import mandalaBackground from "/public/images/p10.jpg";
 import mixtapeBackground from "/public/images/p7.jpg";
 import fantasiasBackground from "/public/images/p8.jpg";
-
+import dlhtynqnBackground from "/public/images/dlhtynqn/1/7.webp";
 import logoMixtapes from "/public/images/logos/mixtape.png";
 import logoMandalas from "/public/images/logos/mandalawhite.png";
 import logoFantasias from "/public/images/logos/fantasias.png";
+import logoDLHTYNQN from "/public/images/logos/dlhtynqn.png";
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -51,6 +52,16 @@ const HomeSlider = () => {
       logo_alt: 'Logo de Fantasías',
       logo_class: 'logoFantasias',
       url:'fantasias'
+    },
+    {
+      title: 'DLHTYNQN :(',
+      description: 'DLHTYNQN es un proyecto de arte digital que explora el todo y la nada a partir de edificios de la ciudad de Caracas.',
+      image:  dlhtynqnBackground.src,
+      alt: 'DLHTYNQN',
+      logo: logoDLHTYNQN.src,
+      logo_alt: 'Logo de DLHTYNQN',
+      logo_class: 'logoDLHTYNQN',
+      url:'dlhtynqn'
     }
 
 
