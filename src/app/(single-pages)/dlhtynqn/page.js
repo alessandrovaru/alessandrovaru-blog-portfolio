@@ -19,24 +19,15 @@ export default function Page() {
 
           <h3>Galería de Imágenes</h3>
           <div className={styles.gallery}>
-            <Image
-              src="https://picsum.photos/800/600?random=1"
-              alt="Galería 1"
-              width={800}
-              height={600}
-            />
-            <Image
-              src="https://picsum.photos/800/600?random=2"
-              alt="Galería 2"
-              width={800}
-              height={600}
-            />
-            <Image
-              src="https://picsum.photos/800/600?random=3"
-              alt="Galería 3"
-              width={800}
-              height={600}
-            />
+            {Array.from({ length: 11 }, (_, i) => (
+              <Image
+                key={i}
+                src={`/images/dlhtynqn/1/${i + 1}.webp`}
+                alt={`Galería ${i + 1}`}
+                width={800}
+                height={600}
+              />
+            ))}
           </div>
         </div>
       </div>

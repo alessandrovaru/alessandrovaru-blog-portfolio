@@ -7,20 +7,23 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--questrial-font);
   position: relative;
   z-index: 2;
+  overflow: hidden !important;
 }
 
 .content {
   max-width: 900px;
   width: 100%;
   text-align: center;
+  overflow: hidden !important;
 }
 
 .content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-family: var(--microgramma-font);
 }
 
 .content p {
@@ -31,9 +34,17 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   width: 100%;
+  /* For mobile: 1 column */
+  grid-template-columns: 1fr;
+}
+
+/* For desktop: 4 columns */
+@media (min-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .gallery img {
