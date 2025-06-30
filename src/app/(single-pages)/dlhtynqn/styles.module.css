@@ -16,13 +16,17 @@
 .content {
   max-width: 900px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   overflow: hidden !important;
 }
 
 .content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-family: var(--microgramma-font);
+}
+
+.content h3 {
     font-family: var(--microgramma-font);
 }
 
