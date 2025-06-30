@@ -24,6 +24,16 @@ import Image from 'next/image';
 const HomeSlider = () => {
   const slides = [
     {
+      title: 'DLHTYNQN :(',
+      description: 'DLHTYNQN es un proyecto de arte digital que explora el todo y la nada a partir de edificios de la ciudad de Caracas.',
+      image:  dlhtynqnBackground.src,
+      alt: 'DLHTYNQN',
+      logo: logoDLHTYNQN.src,
+      logo_alt: 'Logo de DLHTYNQN',
+      logo_class: 'logoDLHTYNQN',
+      url:'dlhtynqn'
+    },
+    {
       title: 'Mandalas',
       description: 'Poemas y mandalas digitales creados a partir de fotografías digitales de la ciudad de Caracas  ',
       image:  mandalaBackground.src,
@@ -52,16 +62,6 @@ const HomeSlider = () => {
       logo_alt: 'Logo de Fantasías',
       logo_class: 'logoFantasias',
       url:'fantasias'
-    },
-    {
-      title: 'DLHTYNQN :(',
-      description: 'DLHTYNQN es un proyecto de arte digital que explora el todo y la nada a partir de edificios de la ciudad de Caracas.',
-      image:  dlhtynqnBackground.src,
-      alt: 'DLHTYNQN',
-      logo: logoDLHTYNQN.src,
-      logo_alt: 'Logo de DLHTYNQN',
-      logo_class: 'logoDLHTYNQN',
-      url:'dlhtynqn'
     }
 
 
