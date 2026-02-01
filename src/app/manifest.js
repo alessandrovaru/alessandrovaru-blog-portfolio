@@ -9,7 +9,7 @@ export default function manifest() {
     theme_color: '#e9e9e9',
     icons: [
       {
-        src: '/public/mandala.ico',
+        src: '/mandala.ico',
         sizes: 'any',
         type: 'image/x-icon',
       },

@@ -37,7 +37,6 @@ export const metadata = {
   creator: 'Alessandro Varuzza',
   publisher: 'Alessandro Varuzza',
   formatDetection: ['telephone=no', 'email=no', 'address=no'],
-  metadataBase: new URL('https://alessandrovaru.com/'),
   alternates: {
     canonical: '/',
     languages: {
