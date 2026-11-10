@@ -1,11 +1,11 @@
 export default function manifest() {
   return {
-    name: 'Alessandrovaru Blog Portfolio',
+    name: 'Alessandrovaru',
     short_name: 'Alessandrovaru',
-    description: 'Web portfolio and blog of Alessandro Varuzza',
+    description: 'Portafolio de arte digital, fotografía y desarrollo de Alessandro Varuzza',
     start_url: '/',
     display: 'standalone',
-    background_color: '#e9e9e9 ',
+    background_color: '#e9e9e9',
     theme_color: '#e9e9e9',
     icons: [
       {

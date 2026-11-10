@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp, getApps } from "firebase/app";
 
 const firebaseConfig = {
@@ -11,7 +10,6 @@ const firebaseConfig = {
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
-let firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
 export default firebase_app;

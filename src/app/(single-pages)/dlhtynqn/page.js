@@ -1,54 +1,26 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import styles from './styles.module.css'
-import HeroAnimation from './HeroAnimation'
-import ImagePopup from './ImagePopup'
-import { gsap } from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import Nav from '@/components/Nav'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import listData from '@/firebase/firestore/listData'
+import Nav from '@/components/Nav'
+import HeroAnimation from './HeroAnimation'
+import Gallery from './Gallery'
+import ScrollTopButton from './ScrollTopButton'
+import styles from './styles.module.css'
 
-gsap.registerPlugin(ScrollToPlugin)
+const description =
+  'DLHTYNQN (Donde lo había todo ya no queda nada) es un proyecto de arte digital que explora el todo y la nada a partir de edificios de la ciudad de Caracas.'
+
+export const metadata = {
+  title: 'DLHTYNQN — Donde lo había todo ya no queda nada',
+  description,
+  alternates: { canonical: '/dlhtynqn' },
+  openGraph: {
+    title: 'DLHTYNQN — Donde lo había todo ya no queda nada',
+    description,
+    url: '/dlhtynqn',
+    images: [{ url: '/images/dlhtynqn/1/7.webp', width: 3200, height: 2400, alt: 'DLHTYNQN' }],
+  },
+}
 
 export default function Page() {
-  const [selectedImage, setSelectedImage] = useState(null)
-  const [isMobile, setIsMobile] = useState(false)
-  const [mandalas, setMandalas] = useState([])
-  const router = useRouter()
-
-  useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768) // Breakpoint for mobile
-    }
-    checkIsMobile()
-    window.addEventListener('resize', checkIsMobile)
-
-    const fetchMandalas = async () => {
-      const mandalaItems = await listData('mandalas')
-      setMandalas(mandalaItems)
-    }
-    fetchMandalas()
-
-    return () => window.removeEventListener('resize', checkIsMobile)
-  }, [])
-
-  const handleScrollToTop = () => {
-    gsap.to(window, { duration: 0.5, scrollTo: 0, ease: 'power3.inOut' })
-  }
-
-  const handleRandomMandala = () => {
-    if (mandalas.length > 0) {
-      const randomItem = mandalas[Math.floor(Math.random() * mandalas.length)]
-      if (randomItem && randomItem.slug) {
-        router.push(`/mandalas/${randomItem.slug}`)
-      }
-    }
-  }
-
   return (
     <div className={styles.page}>
       <Nav />
@@ -101,54 +73,19 @@ export default function Page() {
           </p>
 
           <h3>Galería de Imágenes</h3>
-          <div className={styles.gallery}>
-            {Array.from({ length: 11 }, (_, i) => {
-              const src = `/images/dlhtynqn/1/${i + 1}.webp`
-              return (
-                <div
-                  key={i}
-                  className={styles.galleryItem}
-                  onClick={() => !isMobile && setSelectedImage(src)}
-                >
-                  <Image
-                    src={src}
-                    alt={`Galería ${i + 1}`}
-                    width={800}
-                    height={600}
-                  />
-                </div>
-              )
-            })}
-          </div>
+          <Gallery />
+
           <div className={styles.buttonContainer}>
-            <button
-              onClick={handleScrollToTop}
-              className={styles.actionButton}
-            >
-              Vuelve arriba
-            </button>
-            <Link
-              href="/mandalas"
-              className={styles.actionButton}
-            >
+            <ScrollTopButton className={styles.actionButton} />
+            <Link href="/mandalas" className={styles.actionButton}>
               Mandalas
             </Link>
-            <Link
-              href="/mixtapes-de-caracas"
-              className={styles.actionButton}
-            >
+            <Link href="/mixtapes-de-caracas" className={styles.actionButton}>
               Mixtapes de Caracas
             </Link>
           </div>
         </div>
       </div>
-
-      {selectedImage && (
-        <ImagePopup
-          src={selectedImage}
-          onClose={() => setSelectedImage(null)}
-        />
-      )}
     </div>
   )
 }

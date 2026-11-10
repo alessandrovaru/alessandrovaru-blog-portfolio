@@ -1,59 +1,84 @@
-import React from 'react'
+'use client'
+import { useState } from 'react'
+import Modal from 'react-bootstrap/Modal'
 
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Keyboard, A11y } from 'swiper/modules'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination,} from 'swiper/modules';
+import 'swiper/css'
+import 'swiper/css/pagination'
+import './styles.css'
 
-import './styles.css';
+const PostImagesSlider = ({ images = [], title }) => {
+  // Índice de la imagen abierta en el modal, o null si está cerrado.
+  const [openIndex, setOpenIndex] = useState(null)
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+  if (images.length === 0) {
+    return (
+      <div className="mySwiper postImagesEmpty">
+        <p>Las imágenes no están disponibles en este momento.</p>
+      </div>
+    )
+  }
 
-const PostImagesSlider = (props) => {
-  const [show, setShow] = useState(false);
-  const [image, setImage] = useState(false);
+  const selected = openIndex !== null ? images[openIndex] : null
 
-  const handleClose = () => {
-    setShow(false);
-    setImage(false);
-  };
-  const handleShow = () => setShow(true);
   return (
-    <Swiper
-      className={'mySwiper'}
-      modules={[Navigation, Pagination]}
-      spaceBetween={0}
-      slidesPerView={1}
-      pagination={{ clickable: true }}
-      style={{
-        "--swiper-pagination-color": "#07140f",
-        "--swiper-pagination-bullet-inactive-color": "#FFFFFF",
-        "--swiper-pagination-bullet-inactive-opacity": "1",
-        "--swiper-pagination-bullet-size": "16px",
-        "--swiper-pagination-bullet-horizontal-gap": "6px"
-      }}
-    >
-      {props.storageResult.map((item) => (
-        <SwiperSlide className={'mySwiperSlide'} key={item.value} >
-          <img onClick={()=>{handleShow(); setImage({slug: props.result[0].storage_slug, item:item.value})}} loading="lazy" src={`https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/${props.storage}%2F${props.result[0].storage_slug}%2F${item.value}?alt=media&token=d93542a5-875c-47cd-94d4-2998417d8300&_gl=1*101z3oy*_ga*MzYyNDUzOTU4LjE2OTU5OTIxNDI.*_ga_CW55HF8NVT*MTY5NjI4OTY3MS4xNC4xLjE2OTYyODk3MDEuMzAuMC4w`} className='img-fluid' />
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>{props.result[0].title}</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <img loading="lazy" src={`https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/${props.storage}%2F${image.slug}%2F${image.item}?alt=media&token=d93542a5-875c-47cd-94d4-2998417d8300&_gl=1*101z3oy*_ga*MzYyNDUzOTU4LjE2OTU5OTIxNDI.*_ga_CW55HF8NVT*MTY5NjI4OTY3MS4xNC4xLjE2OTYyODk3MDEuMzAuMC4w`} className='img-fluid' />
-              </Modal.Body>
-            </Modal>
-        </SwiperSlide>
-      ))
-      }
-    </Swiper>
+    <>
+      <Swiper
+        className="mySwiper"
+        modules={[Pagination, Keyboard, A11y]}
+        spaceBetween={0}
+        slidesPerView={1}
+        keyboard={{ enabled: true }}
+        pagination={{ clickable: true }}
+        style={{
+          '--swiper-pagination-color': '#07140f',
+          '--swiper-pagination-bullet-inactive-color': '#FFFFFF',
+          '--swiper-pagination-bullet-inactive-opacity': '1',
+          '--swiper-pagination-bullet-size': '16px',
+          '--swiper-pagination-bullet-horizontal-gap': '6px',
+        }}
+      >
+        {images.map((image, index) => (
+          <SwiperSlide className="mySwiperSlide" key={image.name}>
+            <button
+              type="button"
+              className="postImageButton"
+              onClick={() => setOpenIndex(index)}
+              aria-label={`Ampliar imagen ${index + 1} de ${title}`}
+            >
+              {/* Imágenes servidas desde Firebase Storage; se usa <img> para no
+                  consumir la cuota de optimización de imágenes de Vercel. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image.src}
+                alt={`${title} — imagen ${index + 1}`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                decoding="async"
+              />
+            </button>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Modal show={selected !== null} onHide={() => setOpenIndex(null)} centered size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selected && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={selected.src}
+              alt={`${title} — imagen ${openIndex + 1}`}
+              className="img-fluid"
+            />
+          )}
+        </Modal.Body>
+      </Modal>
+    </>
   )
 }
 

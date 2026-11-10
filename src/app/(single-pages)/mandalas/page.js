@@ -1,36 +1,26 @@
 import MandalaButton from "@/components/MandalaButton"
-
-import { notFound } from "next/navigation";
+import listData from "@/firebase/firestore/listData";
 
 import './styles.css'
 
-import listData from "@/firebase/firestore/listData";
+export const revalidate = 600
 
-const pageContent = {
+export const metadata = {
   title: 'Mandalas',
-  subtitle: 'El Mandala es el centro este proyecto, símbolo de totalidad y orden interior. Los diseños y los poemas son producciones inconscientes en las que permito hablar a las imágenes a partir de mis fotos y los más profundo de mi ser.',
-  link: {
-    url: '/mandalas',
-    text: 'Ver más'
-  }
+  description: 'Serie fotográfica de poemas y mandalas digitales creados a partir de fotografías de la ciudad de Caracas.',
+  alternates: { canonical: '/mandalas' },
+  openGraph: { url: '/mandalas' },
 }
-const pagesFb = await listData('mandalas');
 
+export default async function Page() {
+  const mandalas = await listData('mandalas')
+  const pagesList = mandalas
+    .filter((page) => page.slug)
+    .map((page) => ({ title: page.title, url: `/mandalas/${page.slug}` }))
 
-const pagesListFb = pagesFb.map((page) => {
-  return {
-    title: page.title,
-    url: `/mandalas/${page.slug}`
-  }
-})
-
-
-const Page = () => {
   return (
     <div className="mandala-page-container">
-      <MandalaButton content={pageContent} pagesList={pagesListFb} />
+      <MandalaButton pagesList={pagesList} />
     </div>
   )
 }
-
-export default Page

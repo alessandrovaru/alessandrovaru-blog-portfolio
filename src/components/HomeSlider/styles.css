@@ -12,6 +12,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
     color: white;
     height: 100%;
     width: 100%;
@@ -26,9 +28,7 @@
       position: relative !important;
     }
   } 
-  & .home-slider-text:hover{
-  } 
-  & h1{
+  & h2{
     font-size: 2.5rem;
     margin-bottom: 0;
   }
@@ -41,12 +41,6 @@
     width: 120px;
     animation: rotate 33s linear infinite;
   }
-  & .logoMixtapes{
-    
-  }
-  & .logoFantasias{
-    
-  }
   & .home-slider-button{
     color: white;
     border: 1px solid white;
@@ -57,10 +51,14 @@
     color: black;
   }
   & .home-slider-image{
+    position: relative;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: bottom;
+    overflow: hidden;
+  }
+  & .home-slider-bg{
+    object-fit: cover;
+    object-position: bottom;
   }
 }
 
@@ -75,7 +73,7 @@
 @media (max-width: 900px) {
   .homeSlide{
     flex-direction: column-reverse;
-    & h1{
+    & h2{
       font-size: 1.4rem;
       color: white;
     }
@@ -86,10 +84,8 @@
     & .home-slider-text{
       width: 100%;
     }
-    & .home-slider-image{
-      width: 100%;
-      background-size: cover;
-      background-position: center;
+    & .home-slider-bg{
+      object-position: center;
     }
     & .logoMandalas{
       width: 80px;
@@ -103,3 +99,9 @@
   }
 }
 
+
+/* Los títulos de cada slide son h2 (la página tiene un único h1), pero
+   mantienen el tamaño que tenían como h1. */
+.homeSlide h2.home-slider-title{
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem) !important;
+}

@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Reglas de Firestore para alessandrovaru.com
+// Publícalas en: Consola de Firebase → Firestore Database → Reglas.
+// Reemplaza REEMPLAZAR_CON_TU_UID por tu UID (Authentication → Users).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == "REEMPLAZAR_CON_TU_UID";
+    }
+
+    match /mandalas/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /mixtapes-de-caracas/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Todo lo demás queda cerrado.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -56,16 +56,19 @@
 }
 
 .galleryItem {
-  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
   overflow: hidden;
   border-radius: 8px;
 }
 
-/* On mobile, remove the pointer cursor as popup is disabled */
-@media (max-width: 767px) {
-  .galleryItem {
-    cursor: default;
-  }
+.galleryItem:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }
 
 .gallery img {

@@ -1,4 +1,5 @@
 import NavigationBar from '@/components/Nav'
+import { People, CreditCard, Brush, Bell, GraphUp, Headset } from 'react-bootstrap-icons'
 import styles from './styles.module.css'
 
 export const metadata = {
@@ -7,17 +8,18 @@ export const metadata = {
   openGraph: {
     title: 'Transforma tu web con esta aplicación para la gestión de gimnasios',
     description: 'Optimiza la experiencia de tus usuarios y la administración de tu gimnasio con nuestra aplicación web, construida con Next.js 14 y Google Firebase. Personalizable, económica y fácil de usar.',
-    url: 'https://www.alessandrovaru.com/gimnasios',
+    url: '/gimnasios',
     siteName: 'Alessandrovaru',
     images: [
       {
-        url: 'images/metadata/gym.jpg',
+        url: '/images/metadata/gym.jpg',
         width: 1366,
         height: 768
       },
     ],
-    locale: 'es_ES',
+    locale: 'es_VE',
   },
+  alternates: { canonical: '/gimnasios' },
 }
 
 export default function TemplateLanding() {
@@ -53,12 +55,6 @@ export default function TemplateLanding() {
                 src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fhero.mp4?alt=media&token=19ad0565-2798-4575-b83d-bfa71da2d5bb"
                 type="video/mp4"
               />
-              <track
-                src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fhero.mp4?alt=media&token=19ad0565-2798-4575-b83d-bfa71da2d5bb"
-                kind="subtitles"
-                srcLang="es"
-                label="Español"
-              />
               Tu navegador no soporta el elemento de video.
             </video>
           </div>
@@ -75,42 +71,42 @@ export default function TemplateLanding() {
                   title: "Gestión de Miembros",
                   description: "Administra fácilmente los datos de tus miembros, suscripciones y asistencia con una interfaz intuitiva.",
                   icon: (
-                    <i className="fas fa-users text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <People className="text-light mb-4 mt-2" style={{ width: 'clamp(1.5rem, 5vw, 2rem)', height: 'clamp(1.5rem, 5vw, 2rem)' }} aria-hidden="true" />
                   ),
                 },
                 {
                   title: "Plataforma de Pagos",
                   description: "Facilita el pago de suscripciones y clases mediante múltiples métodos de pago seguros y confiables.",
                   icon: (
-                    <i className="fas fa-credit-card text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <CreditCard className="text-light mb-4 mt-2" style={{ width: 'clamp(1.5rem, 5vw, 2rem)', height: 'clamp(1.5rem, 5vw, 2rem)' }} aria-hidden="true" />
                   ),
                 },
                 {
                   title: "Personalizable",
                   description: "Adapta colores, contenidos y funcionalidades para que reflejen la identidad única de tu gimnasio.",
                   icon: (
-                    <i className="fas fa-paint-brush text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <Brush className="text-light mb-4 mt-2" style={{ width: 'clamp(1.5rem, 5vw, 2rem)', height: 'clamp(1.5rem, 5vw, 2rem)' }} aria-hidden="true" />
                   ),
                 },
                 {
                   title: "Reservas y Notificaciones Push",
                   description: "Permite a tus miembros reservar clases en línea y recibir notificaciones push para mantenerlos comprometidos.",
                   icon: (
-                    <i className="fas fa-bell text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <Bell className="text-light mb-4 mt-2" style={{ width: 'clamp(1.5rem, 5vw, 2rem)', height: 'clamp(1.5rem, 5vw, 2rem)' }} aria-hidden="true" />
                   ),
                 },
                 {
                   title: "Panel de Análisis de Datos",
                   description: "Accede a informes detallados sobre membresías, clases y pagos para tomar decisiones informadas.",
                   icon: (
-                    <i className="fas fa-chart-line text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <GraphUp className="text-light mb-4 mt-2" style={{ width: 'clamp(1.5rem, 5vw, 2rem)', height: 'clamp(1.5rem, 5vw, 2rem)' }} aria-hidden="true" />
                   ),
                 },
                 {
                   title: "Soporte Técnico",
                   description: "Recibe asistencia dedicada para la configuración, personalización y mantenimiento de tu plantilla.",
                   icon: (
-                    <i className="fas fa-headset text-light mb-4 mt-2" style={{fontSize: 'clamp(1.5rem, 5vw, 2rem)'}}></i>
+                    <Headset className="text-light mb-4 mt-2" style={{ width: 'clamp(1.5rem, 5vw, 2rem)', height: 'clamp(1.5rem, 5vw, 2rem)' }} aria-hidden="true" />
                   ),
                 },
               ].map((feature, index) => (
@@ -119,7 +115,7 @@ export default function TemplateLanding() {
                     <div className="card-body text-center">
                       {feature.icon}
                       <p className="text-white card-title" style={{ fontWeight: 'bold'}}>{feature.title}</p>
-                      <p className="text-darkcard-text">{feature.description}</p>
+                      <p className="card-text">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -144,12 +140,6 @@ export default function TemplateLanding() {
                 <source
                   src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fdemo.mp4?alt=media&token=d3899a6d-d3fb-4adf-b9c1-0933c8d2d996"
                   type="video/mp4"
-                />
-                <track
-                  src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fdemo.mp4?alt=media&token=d3899a6d-d3fb-4adf-b9c1-0933c8d2d996"
-                  kind="subtitles"
-                  srcLang="es"
-                  label="Español"
                 />
                 Tu navegador no soporta el elemento de video.
               </video>
@@ -190,12 +180,6 @@ export default function TemplateLanding() {
                     <source
                       src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fdemo-horario.mp4?alt=media&token=b2f42e47-2b22-495d-a9ba-4f84a0cef892"
                       type="video/mp4"
-                    />
-                    <track
-                      src="https://firebasestorage.googleapis.com/v0/b/alessandrovaru-nextjs.appspot.com/o/videos%2Fdemo-horario.mp4?alt=media&token=b2f42e47-2b22-495d-a9ba-4f84a0cef892"
-                      kind="subtitles"
-                      srcLang="es"
-                      label="Español"
                     />
                     Tu navegador no soporta el elemento de video.
                   </video>
@@ -289,7 +273,7 @@ export default function TemplateLanding() {
                         ))}
                       </ul>
                       <div className="text-center">
-                        <a href='https://tally.so/r/wk7aPM' target='_blank' className={`btn ${plan.highlight ? 'btn-dark' : 'btn-outline-dark'} w-100`}>
+                        <a href='https://tally.so/r/wk7aPM' target='_blank' rel='noopener noreferrer' className={`btn ${plan.highlight ? 'btn-dark' : 'btn-outline-dark'} w-100`}>
                           {plan.cta}
                         </a>
                       </div>
@@ -311,25 +295,12 @@ export default function TemplateLanding() {
               <p className="lead mb-4">
                 Comienza con nuestra plantilla y optimiza la gestión de tu gimnasio para maximizar ingresos y satisfacción de tus miembros.
               </p>
-              <a href='https://tally.so/r/wk7aPM' target='_blank' className="btn btn-light btn-lg me-2">Comprar Ahora</a>
+              <a href='https://tally.so/r/wk7aPM' target='_blank' rel='noopener noreferrer' className="btn btn-light btn-lg me-2">Comprar Ahora</a>
               <a href='#pricing' className="btn btn-outline-light btn-lg">Ver Planes</a>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Pie de Página */}
-      <footer className="py-3 bg-dark bg-gradient text-white-50">
-        <div className="container">
-          <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
-            <p className="mb-0">© 2024 Todos los derechos reservados.</p>
-            <nav>
-              <a className="text-white-50 text-decoration-none me-3" href="#">Términos de Servicio</a>
-              <a className="text-white-50 text-decoration-none" href="#">Política de Privacidad</a>
-            </nav>
-          </div>
-        </div>
-      </footer>
     </div>
     </>
   )

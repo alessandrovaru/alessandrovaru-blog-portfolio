@@ -1,22 +1,17 @@
-import Image from 'next/image';
 import './styles.css';
 
+const description = 'Fantasías es una serie documental contemplativa ambientada en la ciudad de Caracas, Venezuela.';
+
 export const metadata = {
-  title: "Fantasías - Episodio 1",
-  description: "Documental contemplativo ambientado en la ciudad de Caracas, Venezuela.",
-  generator: "Next.js",
-  applicationName: "alessandrovaru-blog-portfolio",
-  referrer: 'origin-when-cross-origin',
-  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías', 'Baraka', 'Documental Contemplativo', 'Documental', 'Ron Fricke', 'surrealism'],
-  creator: 'Alessandro Varuzza',
-  publisher: 'Alessandro Varuzza',
-  formatDetection: ['telephone=no', 'email=no', 'address=no'],
-  metadataBase: new URL('https://alessandrovaru.com/fantasias'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'es-VE': '/es',
-    }
+  title: 'Fantasías — Episodio 2',
+  description,
+  keywords: ['Fantasías', 'Documental contemplativo', 'Caracas', 'Baraka', 'Ron Fricke', 'Alessandro Varuzza'],
+  alternates: { canonical: '/fantasias' },
+  openGraph: {
+    title: 'Fantasías — Episodio 2',
+    description,
+    url: '/fantasias',
+    type: 'video.other',
   },
 };
 
@@ -28,8 +23,14 @@ function Page() {
         <article>
             <h1 className='fantasia-title'>Fantasías</h1>
             <h2 className='fantasia-subtitle mb-2'>Episodio 2</h2>
-            <iframe src="https://www.youtube.com/embed/rX8mLxA7FZc?si=xLXnNUVGp1_dR5hp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            {/* <iframe src="https://www.youtube.com/embed/YLVDs2DRre8?si=HQ88GaEueOe7IBwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/rX8mLxA7FZc"
+              title="Fantasías — Episodio 2 (video de YouTube)"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
             <h3 className='fantasia-description-title mt-2'>Descripción</h3>
             <section>
               <p>Fantasías es una serie documental contemplativa de la ciudad de Caracas.</p>

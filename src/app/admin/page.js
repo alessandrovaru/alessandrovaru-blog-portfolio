@@ -1,49 +1,33 @@
 'use client'
-import {useEffect} from 'react'
-
 import { getAuth, signOut } from "firebase/auth";
+import firebase_app from "@/firebase/config";
 import { useRouter } from 'next/navigation'
-import { useAuthContext } from '@/context/AuthContext'
+import useRequireAuth from './useRequireAuth'
 
 import './styles.css'
 
-
 const Page = () => {
-
-  const { user } = useAuthContext()
-
+  const { user } = useRequireAuth()
   const router = useRouter()
 
-  const auth = getAuth();
-  
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
+  const handleSignOut = async () => {
+    try {
+      await signOut(getAuth(firebase_app))
       router.push("/signin")
-    }).catch((error) => {
-      alert(error)
-    });
+    } catch (error) {
+      alert(error.message)
+    }
   }
 
-  const handleCreateMandala = () => {
-    router.push("/admin/mandalas/create")
-  }
-  const handleCreateMixtape = () => {
-    router.push("/admin/mixtapes-de-caracas/create")
-  }
-
-  useEffect(() => {
-      if (user == null) router.push("/signin")
-  }, [user])
-
-
+  if (!user) return null
 
   return (
     <div className='admin-container container'>
       <h1>Admin Page</h1>
-      <p>Logged in as {user?.email}</p>
-      <button onClick={handleCreateMandala}>Crear Mandala</button>
-      <button onClick={handleCreateMixtape}>Crear Mixtape</button>
-      <button onClick={handleSignOut}>Sign Out</button>
+      <p>Logged in as {user.email}</p>
+      <button className="btn btn-dark me-2" onClick={() => router.push("/admin/mandalas/create")}>Crear Mandala</button>
+      <button className="btn btn-dark me-2" onClick={() => router.push("/admin/mixtapes-de-caracas/create")}>Crear Mixtape</button>
+      <button className="btn btn-outline-dark" onClick={handleSignOut}>Sign Out</button>
     </div>
   )
 }

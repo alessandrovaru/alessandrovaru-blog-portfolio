@@ -1,40 +1,31 @@
 import listData from "@/firebase/firestore/listData"
+import { SITE_URL } from "@/lib/site"
+
+export const revalidate = 3600
+
+const STATIC_ROUTES = [
+  { path: '', priority: 1 },
+  { path: '/dlhtynqn', priority: 0.8 },
+  { path: '/mandalas', priority: 0.8 },
+  { path: '/mixtapes-de-caracas', priority: 0.8 },
+  { path: '/fantasias', priority: 0.7 },
+  { path: '/gimnasios', priority: 0.6 },
+]
 
 export default async function sitemap() {
-  const baseUrl = 'https://www.alessandrovaru.com';
-  const mixtapes = await listData('mixtapes-de-caracas');
-  const mandalas = await listData('mandalas');
-  
+  const [mixtapes, mandalas] = await Promise.all([
+    listData('mixtapes-de-caracas'),
+    listData('mandalas'),
+  ]);
+
+  const postEntries = (items, basePath) =>
+    items
+      .filter((item) => item.slug)
+      .map((item) => ({ url: `${SITE_URL}${basePath}/${item.slug}`, priority: 0.6 }));
+
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/mixtapes-de-caracas`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/mandalas`,
-      lastModified: new Date(),
-    },
-    {
-      url: `${baseUrl}/fantasias`,
-      lastModified: new Date(),
-    },
-    // MIXTAPES
-    ...mixtapes.map((mixtape) => {
-      return {
-        url: `${baseUrl}/mixtapes-de-caracas/${mixtape.slug}`,
-        lastModified: new Date(),
-      }
-    }),
-    // MANDALAS
-    ...mandalas.map((mandala) => {
-      return {
-        url: `${baseUrl}/mandalas/${mandala.slug}`,
-        lastModified: new Date(),
-      }
-    }),
+    ...STATIC_ROUTES.map(({ path, priority }) => ({ url: `${SITE_URL}${path}`, priority })),
+    ...postEntries(mixtapes, '/mixtapes-de-caracas'),
+    ...postEntries(mandalas, '/mandalas'),
   ];
 }
