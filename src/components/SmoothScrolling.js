@@ -1,16 +1,14 @@
 "use client";
-import { ReactLenis, useLenis } from 'lenis/react'
+import { ReactLenis } from 'lenis/react'
 
+// Scroll suave global. Los contenedores con scroll propio deben llevar
+// el atributo `data-lenis-prevent` para que Lenis no intercepte su rueda.
 function SmoothScrolling({ children }) {
-    const lenis = useLenis((lenis) => {
-        // called every scroll
-        console.log(lenis)
-      })
   return (
-    <ReactLenis root options={{ lerp: 0.2, duration: 1.2, smoothTouch: true }}>
+    <ReactLenis root options={{ lerp: 0.2 }}>
       {children}
     </ReactLenis>
   );
 }
 
-export default SmoothScrolling; 
+export default SmoothScrolling;

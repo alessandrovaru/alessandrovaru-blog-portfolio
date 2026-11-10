@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// Reglas de Cloud Storage para alessandrovaru.com
+// Publícalas en: Consola de Firebase → Storage → Reglas.
+// Reemplaza REEMPLAZAR_CON_TU_UID por tu UID (Authentication → Users).
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == "REEMPLAZAR_CON_TU_UID";
+    }
+
+    match /{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

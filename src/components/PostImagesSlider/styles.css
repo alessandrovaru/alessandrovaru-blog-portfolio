@@ -3,19 +3,44 @@
   height: 96vh;
   margin: 0 auto;
   padding: 0;
-  /* add hover  */
   transition: all 0.3s ease-in-out;
 }
-
 
 .mySwiperSlide{
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+.postImageButton{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
   & > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.postImageButton:focus-visible{
+  outline: 3px solid #46875a;
+  outline-offset: -3px;
+}
+
+.postImagesEmpty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: #d4d4d4;
+  & p{
+    color: rgb(10, 20, 14);
+    margin: 0;
   }
 }
 
@@ -24,7 +49,4 @@
     width:100%;
     height: 50vh;
   }
-
-  
 }
-  

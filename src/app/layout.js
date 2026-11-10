@@ -2,77 +2,94 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Analytics } from '@vercel/analytics/react';
-
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import localFont from "next/font/local";
-import { AuthContextProvider } from "@/context/AuthContext";
 import Script from "next/script";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import { SITE_URL } from "@/lib/site";
 
-const questrial = localFont({ 
+const questrial = localFont({
   src: "../../public/fonts/questrial.ttf",
-  variable: '--questrial-font'
-})
+  variable: "--questrial-font",
+});
 
-// config your font
 const microgramma = localFont({
   src: "../../public/fonts/micro.otf",
   variable: "--microgramma-font",
 });
 
+const description =
+  "Portafolio de Alessandro Varuzza: desarrollo de software, fotografía y arte digital desde Caracas. Mandalas, Mixtapes de Caracas, Fantasías y DLHTYNQN.";
 
 export const metadata = {
-  metadataBase: new URL('https://alessandrovaru.com/'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Alessandrovaru',
-    template: '%s | Alessandrovaru',
+    default: "Alessandrovaru",
+    template: "%s | Alessandrovaru",
   },
-  generator: "Next.js",
-  applicationName: "alessandrovaru-blog-portfolio",
-  referrer: 'origin-when-cross-origin',
-  keywords:['Next.js', 'React', 'Portfolio', 'Blog', 'Alessandro Varuzza', 'Alessandrovaru', 'Varuzza', 'Alessandro', 'Gian Alessandro Varuzza', 'Gian Alessandro', 'Gian', 'Mandalas', 'Mandala', 'Mandala Art', 'Mandala Artist', 'Mandala Art', 'Mixtapes De Caracas', 'Mixtapes', 'Caracas', 'Fantasías', 'Jung'],
-  creator: 'Alessandro Varuzza',
-  publisher: 'Alessandro Varuzza',
-  formatDetection: ['telephone=no', 'email=no', 'address=no'],
+  description,
+  applicationName: "Alessandrovaru",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Alessandro Varuzza",
+    "Alessandrovaru",
+    "Gian Alessandro Varuzza",
+    "Portafolio",
+    "Mandalas",
+    "Arte digital",
+    "Mixtapes de Caracas",
+    "Caracas",
+    "Fotografía",
+    "Fantasías",
+    "DLHTYNQN",
+    "Jung",
+  ],
+  creator: "Alessandro Varuzza",
+  publisher: "Alessandro Varuzza",
+  formatDetection: { telephone: false, email: false, address: false },
   alternates: {
-    canonical: '/',
-    languages: {
-      'es-VE': '/es',
-    }
+    canonical: "/",
   },
   openGraph: {
-    description: "Desarrollador de Software, Fotógrafo y Artista Marcial.",
-    images: '/public/p8.jpg',
-    locale: 'es-VE',
-    type: 'website',
-  }
+    title: "Alessandrovaru",
+    description,
+    url: "/",
+    siteName: "Alessandrovaru",
+    images: [{ url: "/images/og.jpg", width: 1200, height: 630, alt: "Alessandrovaru" }],
+    locale: "es_VE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@alessandrovaru",
+  },
 };
+
+const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-      <Script id="clarity-script" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");
-          `}
-        </Script>
-      <script async src="https://kit.fontawesome.com/0634a1d485.js" crossOrigin="anonymous"></script>
-      </head>
+    <html lang="es">
       <body className={`${microgramma.className} ${questrial.variable}`}>
         <SmoothScrolling>
           {children}
           <Footer />
-          <Analytics />
-          <SpeedInsights />
         </SmoothScrolling>
+        <Analytics />
+        <SpeedInsights />
+        {clarityId && (
+          <Script id="clarity-script" strategy="afterInteractive">
+            {`
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", ${JSON.stringify(clarityId)});
+            `}
+          </Script>
+        )}
       </body>
     </html>
   );

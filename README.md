@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# alessandrovaru.com
 
-## Getting Started
+Portafolio de Alessandro Varuzza: arte digital, fotografía y desarrollo desde Caracas.
+Secciones: **DLHTYNQN**, **Mandalas**, **Mixtapes de Caracas**, **Fantasías** y la landing de **Gimnasios**.
 
-First, run the development server:
+## Stack
+
+- [Next.js 16](https://nextjs.org/) (App Router, Turbopack) + React 19
+- Firebase: Firestore (contenido), Storage (imágenes) y Auth (panel `/admin`)
+- Bootstrap / react-bootstrap, Swiper, GSAP + Lenis
+- Desplegado en Vercel (Analytics y Speed Insights)
+
+## Desarrollo
+
+Requiere Node.js 22 o superior (ver `.nvmrc`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variables de entorno
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Crea un `.env.local` (no se sube al repo) o descárgalas con `vercel env pull`:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+NEXT_PUBLIC_CLARITY_PROJECT_ID=   # opcional (Microsoft Clarity)
+```
 
-## Learn More
+## Contenido
 
-To learn more about Next.js, take a look at the following resources:
+- Los Mandalas y Mixtapes son documentos de Firestore (`mandalas`, `mixtapes-de-caracas`)
+  con `{ title, content, slug, storage_slug }`. Sus fotos viven en Storage en
+  `<colección>/<storage_slug>/`.
+- Las páginas se pre-renderizan en el servidor y se regeneran cada 10 minutos
+  (`revalidate = 600`): lo creado desde `/admin` aparece sin redeploy.
+- El texto se sanea en el servidor (`src/lib/sanitize.js`); solo se permiten
+  etiquetas de formato en línea.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Seguridad
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- El panel `/admin` solo se protege en el navegador. La protección real son las
+  reglas de Firebase: [`firestore.rules`](firestore.rules) y [`storage.rules`](storage.rules).
+  Reemplaza `REEMPLAZAR_CON_TU_UID` por tu UID y publícalas desde la consola de Firebase.
+- Las cabeceras de seguridad están en `next.config.js`. La CSP está en modo
+  `Report-Only`; cuando no haya avisos en la consola, cámbiala a `Content-Security-Policy`.

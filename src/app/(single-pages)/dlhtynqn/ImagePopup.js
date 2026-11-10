@@ -1,38 +1,45 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styles from './ImagePopup.module.css'
 
-export default function ImagePopup({ src, onClose }) {
+export default function ImagePopup({ src, alt, onClose }) {
+  const closeButtonRef = useRef(null)
+
+  // Cerrar con Escape y llevar el foco al botón de cerrar al abrir.
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [onClose])
+
   if (!src) return null
 
-  const handleDownload = (e) => {
-    e.stopPropagation() // Prevent closing the popup
-    const link = document.createElement('a')
-    link.href = src
-    // Extract filename from URL
-    const filename = src.split('/').pop()
-    link.download = filename
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+  const filename = src.split('/').pop()
 
   return (
-    // The overlay will close the popup when clicked
-    <div className={styles.overlay} onClick={onClose}>
-      {/* stopPropagation prevents clicks inside the popup from closing it */}
-      <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={onClose}>
+    <div className={styles.overlay} onClick={onClose} data-lenis-prevent>
+      <div
+        className={styles.popup}
+        role="dialog"
+        aria-modal="true"
+        aria-label={alt}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button ref={closeButtonRef} type="button" className={styles.closeButton} onClick={onClose} aria-label="Cerrar">
           &times;
         </button>
         <div className={styles.imageContainer}>
-          <Image src={src} alt="Popup Image" layout="fill" objectFit="contain" />
+          <Image src={src} alt={alt} fill sizes="90vw" style={{ objectFit: 'contain' }} />
         </div>
-        <button className={styles.downloadButton} onClick={handleDownload}>
+        <a className={styles.downloadButton} href={src} download={`dlhtynqn-${filename}`}>
           Descargar
-        </button>
+        </a>
       </div>
     </div>
   )
-} 
+}

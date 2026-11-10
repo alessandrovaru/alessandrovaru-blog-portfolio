@@ -1,6 +1,19 @@
 .admin-container{
-  height: 96vh;
+  min-height: 96vh;
+  padding-top: 3rem;
 }
-form label{
-  color: white;
+
+/* globals.css pinta p y label en blanco; en el panel el fondo es claro. */
+.admin-container p,
+.admin-form p,
+.admin-form label,
+.auth-form p,
+.auth-form label{
+  color: #111;
+}
+
+.admin-form label,
+.auth-form label{
+  display: block;
+  margin-top: 1rem;
 }
