@@ -72,7 +72,7 @@ const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${microgramma.className} ${questrial.variable}`}>
+      <body className={`${microgramma.className} ${microgramma.variable} ${questrial.variable}`}>
         <SmoothScrolling>
           {children}
           <Footer />

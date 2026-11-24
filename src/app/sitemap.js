@@ -10,6 +10,7 @@ const STATIC_ROUTES = [
   { path: '/mixtapes-de-caracas', priority: 0.8 },
   { path: '/fantasias', priority: 0.7 },
   { path: '/gimnasios', priority: 0.6 },
+  { path: '/paginas-web', priority: 0.9 },
 ]
 
 export default async function sitemap() {

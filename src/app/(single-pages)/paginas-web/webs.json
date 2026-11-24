@@ -1,0 +1,1068 @@
+{
+ "total": 189,
+ "atlas": {
+  "tamano": 2048,
+  "columnas": 10,
+  "filas": 6,
+  "cantidad": 4
+ },
+ "rubros": {
+  "concesionarios": "Concesionarios",
+  "opticas": "Ópticas",
+  "floristerias": "Floristerías",
+  "odontologia": "Odontología",
+  "tecnologia": "Tecnología"
+ },
+ "conteo": {
+  "concesionarios": 141,
+  "opticas": 22,
+  "floristerias": 20,
+  "odontologia": 5,
+  "tecnologia": 1
+ },
+ "webs": [
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 0
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 1
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 2
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 3
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 4
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 0,
+   "celda": 5
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 6
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 7
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 8
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 9
+  },
+  {
+   "rubro": "odontologia",
+   "atlas": 0,
+   "celda": 10
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 11
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 12
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 13
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 14
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 15
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 0,
+   "celda": 16
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 17
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 18
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 19
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 20
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 21
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 22
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 23
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 24
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 0,
+   "celda": 25
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 26
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 27
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 28
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 29
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 30
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 31
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 32
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 0,
+   "celda": 33
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 34
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 35
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 36
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 37
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 38
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 39
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 40
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 0,
+   "celda": 41
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 42
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 43
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 44
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 45
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 46
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 47
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 48
+  },
+  {
+   "rubro": "odontologia",
+   "atlas": 0,
+   "celda": 49
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 50
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 51
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 0,
+   "celda": 52
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 53
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 54
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 55
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 0,
+   "celda": 56
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 57
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 58
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 0,
+   "celda": 59
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 0
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 1
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 2
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 3
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 4
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 5
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 6
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 7
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 8
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 9
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 10
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 11
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 12
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 13
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 14
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 15
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 16
+  },
+  {
+   "rubro": "tecnologia",
+   "atlas": 1,
+   "celda": 17
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 18
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 19
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 20
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 21
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 22
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 23
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 24
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 25
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 26
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 27
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 28
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 29
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 30
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 31
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 32
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 33
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 34
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 35
+  },
+  {
+   "rubro": "odontologia",
+   "atlas": 1,
+   "celda": 36
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 37
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 38
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 39
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 40
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 41
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 42
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 43
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 44
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 45
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 46
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 47
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 48
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 49
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 50
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 51
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 52
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 53
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 54
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 55
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 1,
+   "celda": 56
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 57
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 1,
+   "celda": 58
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 1,
+   "celda": 59
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 0
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 1
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 2
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 3
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 4
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 5
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 6
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 2,
+   "celda": 7
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 8
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 9
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 10
+  },
+  {
+   "rubro": "odontologia",
+   "atlas": 2,
+   "celda": 11
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 12
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 13
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 14
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 15
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 16
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 17
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 2,
+   "celda": 18
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 19
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 20
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 21
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 22
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 23
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 24
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 25
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 26
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 2,
+   "celda": 27
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 28
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 29
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 30
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 31
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 32
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 33
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 34
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 2,
+   "celda": 35
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 36
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 37
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 38
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 39
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 40
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 41
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 42
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 2,
+   "celda": 43
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 44
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 45
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 46
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 47
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 48
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 49
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 50
+  },
+  {
+   "rubro": "odontologia",
+   "atlas": 2,
+   "celda": 51
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 52
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 53
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 54
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 2,
+   "celda": 55
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 56
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 57
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 2,
+   "celda": 58
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 2,
+   "celda": 59
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 0
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 1
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 2
+  },
+  {
+   "rubro": "floristerias",
+   "atlas": 3,
+   "celda": 3
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 4
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 5
+  },
+  {
+   "rubro": "opticas",
+   "atlas": 3,
+   "celda": 6
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 7
+  },
+  {
+   "rubro": "concesionarios",
+   "atlas": 3,
+   "celda": 8
+  }
+ ],
+ "destacadas": [
+  {
+   "src": "/images/webs/destacadas/3bmotor.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/laflorindaa.webp",
+   "rubro": "floristerias"
+  },
+  {
+   "src": "/images/webs/destacadas/optica-dayglass.webp",
+   "rubro": "opticas"
+  },
+  {
+   "src": "/images/webs/destacadas/apmaquinas.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/clavelleoficial.webp",
+   "rubro": "floristerias"
+  },
+  {
+   "src": "/images/webs/destacadas/autos-8va-estrella-venta-de-vehiculos-en-venezuela.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/optica-zay.webp",
+   "rubro": "opticas"
+  },
+  {
+   "src": "/images/webs/destacadas/kadi-valencia.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/applerose-ccs.webp",
+   "rubro": "floristerias"
+  },
+  {
+   "src": "/images/webs/destacadas/clinica-odontologica-rx-panoramica-tomografia.webp",
+   "rubro": "odontologia"
+  },
+  {
+   "src": "/images/webs/destacadas/toyolandia.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/optica-francia.webp",
+   "rubro": "opticas"
+  },
+  {
+   "src": "/images/webs/destacadas/anthocars1800.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/detallesyfloresccs.webp",
+   "rubro": "floristerias"
+  },
+  {
+   "src": "/images/webs/destacadas/blindadora-luxury-armor-concesionario-tienda-4x4-taller.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/optica-lunettes.webp",
+   "rubro": "opticas"
+  },
+  {
+   "src": "/images/webs/destacadas/goatmotorsve.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/floresccs.webp",
+   "rubro": "floristerias"
+  },
+  {
+   "src": "/images/webs/destacadas/servicio-tecnico-especializado-apple-ventas-accesorios.webp",
+   "rubro": "tecnologia"
+  },
+  {
+   "src": "/images/webs/destacadas/autoalvarez.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/opticas-optiahorro.webp",
+   "rubro": "opticas"
+  },
+  {
+   "src": "/images/webs/destacadas/carlos-la-maquina-concesionario-de-vehiculos.webp",
+   "rubro": "concesionarios"
+  },
+  {
+   "src": "/images/webs/destacadas/centro-odontologico-sonreir.webp",
+   "rubro": "odontologia"
+  },
+  {
+   "src": "/images/webs/destacadas/leonardobrigati.webp",
+   "rubro": "concesionarios"
+  }
+ ]
+}

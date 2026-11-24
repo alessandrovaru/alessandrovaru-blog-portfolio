@@ -16,6 +16,7 @@ import logoMixtapes from "/public/images/logos/mixtape.png";
 import logoMandalas from "/public/images/logos/mandalawhite.png";
 import logoFantasias from "/public/images/logos/fantasias.png";
 import logoDLHTYNQN from "/public/images/logos/dlhtynqn.png";
+import websBackground from "/public/images/webs/portada-home.webp";
 
 const slides = [
   {
@@ -58,6 +59,14 @@ const slides = [
     logo_class: 'logoFantasias',
     url: '/fantasias',
   },
+  {
+    title: 'Páginas web',
+    description: 'Webs para negocios, hechas antes de cobrar: concesionarios, ópticas, floristerías y más. Las ves terminadas y, si te gustan, son tuyas.',
+    image: websBackground,
+    alt: 'Mosaico de páginas web hechas por Alessandrovaru',
+    url: '/paginas-web',
+    boton: 'Ver las webs',
+  },
 ];
 
 const HomeSlider = () => {
@@ -92,10 +101,12 @@ const HomeSlider = () => {
                   priority={index === 0}
                 />
                 <div className="home-slider-text">
-                  <Image className={`mb-3 img-fluid logoSlider ${slide.logo_class}`} src={slide.logo} alt={slide.logo_alt} />
+                  {slide.logo ? (
+                    <Image className={`mb-3 img-fluid logoSlider ${slide.logo_class}`} src={slide.logo} alt={slide.logo_alt} />
+                  ) : null}
                   <h2 className="mb-3 home-slider-title">{slide.title}</h2>
                   <p className="mb-3">{slide.description}</p>
-                  <Link href={slide.url} className="btn home-slider-button">Ver más</Link>
+                  <Link href={slide.url} className="btn home-slider-button">{slide.boton ?? 'Ver más'}</Link>
                 </div>
               </div>
             </div>
