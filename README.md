@@ -1,7 +1,18 @@
 # alessandrovaru.com
 
 Portafolio de Alessandro Varuzza: arte digital, fotografía y desarrollo desde Caracas.
-Secciones: **DLHTYNQN**, **Mandalas**, **Mixtapes de Caracas**, **Fantasías** y la landing de **Gimnasios**.
+Secciones: **DLHTYNQN**, **Mandalas**, **Mixtapes de Caracas**, **Fantasías**, la landing de **Gimnasios** y **Páginas web** (`/paginas-web`).
+
+### Páginas web (`/paginas-web`)
+
+La landing que vende las webs para negocios (la mandan los vendedores del piloto). Se entra desde el último slide del home. Un mandala 3D (Three.js, `src/components/PaginasWeb/escena.js`) hecho con capturas de las **plantillas base** del monorepo en todos sus estilos: nunca negocios reales ni cifras exactas («cientos»). Para regenerar las imágenes (con el monorepo en `~/projects/vektor/monorepo`):
+
+```bash
+node scripts/capturar-bases.mjs   # levanta cada *-base, entra por la puerta y captura sus estilos en capturas/ (fuera de git)
+node scripts/webs-assets.mjs      # atlas, destacadas, fondo del slide y webs.json
+```
+
+Ojo: `globals.css` fuerza Questrial con `!important` en `p`, `a`, `li` y `button`; lo que deba ir en Microgramma (la firma ALESSANDROVARU) lo fuerza su propio CSS.
 
 ## Stack
 
