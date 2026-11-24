@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Capturas de las bases (las saca scripts/capturar-bases.mjs; se publican los atlas)
+/capturas/
+AGENTS.md

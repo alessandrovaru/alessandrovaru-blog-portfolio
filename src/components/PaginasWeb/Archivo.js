@@ -23,15 +23,14 @@ export default function Archivo({ datos, contacto }) {
     let raf = 0
     let observador = null
 
-    const total = datos.total
     const inicio = performance.now()
     const MINIMO = reducido ? 0 : 1900 // la entrada dura lo que tarda en llegar, con un piso
 
     function contar(objetivo) {
-      // La cifra sigue a la carga real (atlas que llegaron) y nunca va más rápido que el piso.
+      // El porcentaje sigue a la carga real (atlas que llegaron) y nunca va más rápido que el piso.
       const porTiempo = Math.min(1, (performance.now() - inicio) / Math.max(MINIMO, 1))
       const p = Math.min(objetivo, porTiempo)
-      if (cifra.current) cifra.current.textContent = String(Math.round(p * total)).padStart(3, '0')
+      if (cifra.current) cifra.current.textContent = String(Math.round(p * 100)).padStart(3, '0')
       return p
     }
 
@@ -73,7 +72,7 @@ export default function Archivo({ datos, contacto }) {
         if (terminado || !vivo) return
         terminado = true
         cancelAnimationFrame(raf)
-        if (cifra.current) cifra.current.textContent = String(total)
+        if (cifra.current) cifra.current.textContent = '100'
         if (!reducido) {
           const { gsap } = await import('gsap')
           gsap.to(escena.uniforms.uMix1, { value: 1, duration: 1.7, ease: 'power3.inOut' })
@@ -106,8 +105,6 @@ export default function Archivo({ datos, contacto }) {
     }
   }, [datos])
 
-  const rubros = Object.entries(datos.conteo).filter(([, n]) => n > 0)
-
   return (
     <section ref={tramo} className={styles.tramo} data-fase={fase} aria-label="Las webs hechas">
       <div className={styles.fijo}>
@@ -121,7 +118,7 @@ export default function Archivo({ datos, contacto }) {
         {/* La entrada: la cifra cuenta las webs que van llegando. */}
         <div className={styles.carga} aria-hidden={fase === 'lista'}>
           <span ref={cifra} className={styles.cifra}>000</span>
-          <span className={styles.cargaTexto}>webs hechas</span>
+          <span className={styles.cargaTexto}>Abriendo el archivo</span>
         </div>
 
         {/* El hero */}
@@ -130,32 +127,25 @@ export default function Archivo({ datos, contacto }) {
             <span className={styles.linea}><span>Tu web</span></span>
             <span className={styles.linea}><span>ya existe</span></span>
           </h1>
-          <p className={styles.bajada}>
-            Antes de cobrarte, hago la página de tu negocio con lo de tu Instagram y te la enseño terminada. Si te gusta, es tuya.
-          </p>
+          <p className={styles.bajada}>Antes de cobrarte, hago la página de tu negocio y te la enseño terminada. Si te gusta, es tuya.</p>
           <div className={styles.botones}>
-            <a href={contacto.href} target="_blank" rel="noopener noreferrer" className={styles.botonLleno}>
-              {contacto.texto}
+            <a href={contacto.href} target="_blank" rel="noopener noreferrer" className={styles.boton}>
+              <span>{contacto.texto}</span>
+              <i aria-hidden="true">↗</i>
             </a>
-            <a href="#como" className={styles.botonLinea}>Cómo trabajo</a>
+            <a href="#como" className={styles.enlace}>
+              Cómo trabajo <i aria-hidden="true">↓</i>
+            </a>
           </div>
         </div>
 
         {/* El archivo */}
         <div className={styles.archivoTexto}>
-          <p className={styles.archivoCifra}>
-            {datos.total}
-            <span> webs, ninguna igual</span>
-          </p>
-          <ul className={styles.rubros}>
-            {rubros.map(([id, n]) => (
-              <li key={id}>
-                <span>{datos.rubros[id]}</span>
-                <b>{n}</b>
-              </li>
-            ))}
-          </ul>
-          <p className={styles.pista}>{sin3d ? 'Cada una con su marca.' : 'Arrastra para girar'}</p>
+          <h2 className={styles.archivoFrase}>
+            <span>Cientos de webs.</span>
+            <span>Ninguna igual.</span>
+          </h2>
+          {!sin3d ? <p className={styles.pista}>Arrastra para girar</p> : null}
         </div>
       </div>
     </section>
