@@ -31,6 +31,12 @@ const CONTACTO = WHATSAPP
   ? { href: `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola, Alessandro. Vi tus páginas web y quiero la de mi negocio.')}`, texto: 'Quiero la mía' }
   : { href: 'https://ig.me/m/alessandrovaru', texto: 'Quiero la mía' }
 
+// El cierre: donde se le escribe de verdad (decisión del usuario, 26-11).
+const REDES = [
+  ['LinkedIn', 'https://www.linkedin.com/in/alessandrovaru'],
+  ['X', 'https://x.com/alessandrovaru'],
+]
+
 const PASOS = [
   ['Miro tu negocio', 'Tus fotos, tus productos y tu forma de hablarle a tus clientes. De ahí sale todo.'],
   ['Te la enseño hecha', 'Te llega un enlace. La recorres en tu teléfono y decides con la página delante, no con un presupuesto.'],
@@ -93,19 +99,27 @@ export default function PaginasWeb() {
         <section className={`${styles.seccion} ${styles.quien}`} aria-labelledby="quien">
           <Revelar as="h2" id="quien" className={styles.h2}>Quién la hace</Revelar>
           <Revelar as="p" className={styles.texto}>
-            Soy Alessandro Varuzza, desarrollador de software y artista digital en Caracas. Las mismas manos que hacen los{' '}
+            Soy Alessandro Varuzza: desarrollador full stack, diseñador gráfico y fotógrafo en Caracas. Programo desde 2017; hoy soy Tech Lead en La Pizarra del DT y en Wadoom Studio, y he hecho webs y apps para Pepsi, para el lanzamiento del cantante Lasso y para la liga Legión MMA.
+          </Revelar>
+          <Revelar as="p" className={styles.texto} retraso={90}>
+            Estudié Comunicación Social, mención Guionismo y Artes Audiovisuales. Las mismas manos que hacen los{' '}
             <Link href="/mandalas">Mandalas</Link> y <Link href="/dlhtynqn">DLHTYNQN</Link> hacen la web de tu negocio: por eso ninguna sale de una plantilla.
           </Revelar>
         </section>
 
         <section className={styles.cierre} aria-labelledby="cierre">
           <Revelar as="h2" id="cierre" className={styles.cierreTitulo}>¿Hacemos la tuya?</Revelar>
-          <Revelar>
-            <a href={CONTACTO.href} target="_blank" rel="noopener noreferrer" className={styles.boton}>
-              <span>Escríbeme</span>
-              <i aria-hidden="true">↗</i>
-            </a>
-          </Revelar>
+          <ul className={styles.redes}>
+            {REDES.map(([red, href], i) => (
+              <Revelar as="li" key={red} retraso={i * 90}>
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  <span className={styles.redNombre}>{red}</span>
+                  <span className={styles.redUsuario}>@alessandrovaru</span>
+                  <i aria-hidden="true">↗</i>
+                </a>
+              </Revelar>
+            ))}
+          </ul>
           <div className={styles.firmaGigante} aria-hidden="true">ALESSANDROVARU</div>
         </section>
       </main>

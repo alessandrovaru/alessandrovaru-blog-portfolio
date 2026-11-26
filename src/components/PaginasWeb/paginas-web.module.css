@@ -443,6 +443,12 @@
   max-width: 52rem;
 }
 
+.quien .texto + .texto {
+  margin-top: 1.25em;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: #d6d4cd;
+}
+
 /* Cierre: la pregunta, el botón y la firma enorme */
 
 .cierre {
@@ -463,6 +469,96 @@
   line-height: 0.95;
   letter-spacing: -0.005em;
   margin: 0 1.25rem 2.5rem;
+}
+
+/* Las redes del cierre: dos filas de lado a lado, sin botón */
+
+.redes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: min(46rem, calc(100% - 2.5rem));
+  border-top: 1px solid rgba(242, 240, 234, 0.16);
+  text-align: left;
+}
+
+.redes li {
+  border-bottom: 1px solid rgba(242, 240, 234, 0.16);
+}
+
+.redes a {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.4rem 0.25rem;
+  color: var(--tinta) !important;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.redes a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: var(--verde-claro);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s var(--sale);
+}
+
+.redNombre {
+  font-family: var(--microgramma-font) !important;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+  line-height: 1;
+  transition: transform 0.6s var(--sale);
+}
+
+.redUsuario {
+  margin-left: auto;
+  font-size: 0.95rem;
+  color: rgba(242, 240, 234, 0.55);
+  transition: color 0.3s var(--sale);
+}
+
+.redes i {
+  font-style: normal;
+  font-size: 1.2rem;
+  transition: transform 0.6s var(--sale), color 0.3s var(--sale);
+}
+
+@media (hover: hover) {
+  .redes a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .redes a:hover .redNombre {
+    transform: translateX(0.4rem);
+  }
+  .redes a:hover .redUsuario,
+  .redes a:hover i {
+    color: var(--verde-claro);
+  }
+  .redes a:hover i {
+    transform: translate(0.2rem, -0.2rem);
+  }
+}
+
+.redes a:focus-visible {
+  outline: 1px solid var(--verde-claro);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .redes a::after,
+  .redNombre,
+  .redes i {
+    transition: none;
+  }
 }
 
 .firmaGigante {
